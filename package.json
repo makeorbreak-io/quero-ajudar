@@ -1,0 +1,37 @@
+{
+  "name": "quero-ajudar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cross-env CONFIG_PATH=/etc/triptogo/config.json ./bin/www",
+    "acc": "cross-env CONFIG_PATH=/etc/triptogo/acc_config.json node ./bin/www",
+    "dev": "cross-env CONFIG_PATH=/etc/triptogo/dev_config.json node ./bin/www",
+    "local_dev": "cross-env CONFIG_PATH=./configs/local_dev_config.json node ./bin/www",
+    "local_dev_migrate": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:migrate",
+    "local_dev_migrate_undo": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:migrate:undo",
+    "local_dev_seed": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:seed:all",
+    "local_dev_seed_undo": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:seed:undo:all",
+    "eslint": "./node_modules/.bin/eslint ."
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.1.2",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.37.6",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "sequelize-cli": "^4.0.0"
+  }
+}
