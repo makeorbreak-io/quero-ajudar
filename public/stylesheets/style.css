@@ -1,8 +1,22 @@
 body {
-  background: url();
+  font-family: 'Montserrat', sans-serif;
+  background: url(/images/background.jpg);
   background-size:100%;
   width: 100%;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.img-fluid {
+  max-width: 45%;
+  height: auto;
+}
+
+#moneyBag {
+  height: 200px;
+  width: auto;
+}
+
+.container-background {
+  background-color: #ffffff7d;
 }
 
 a {
