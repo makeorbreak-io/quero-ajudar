@@ -1,0 +1,9 @@
+.idea
+node_modules
+*.iml
+
+#Configuration files
+configs/local_dev_config.json
+
+#Sqlite databases
+*.sqlite

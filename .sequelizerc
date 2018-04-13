@@ -1,0 +1,19 @@
+var path = require('path');
+
+if(process.env.CONFIG_PATH){
+    config = require(process.env.CONFIG_PATH);
+	process.env.NODE_ENV = config.environment;
+
+    module.exports = {
+        'migrations-path': path.resolve('.', 'migrations'),
+        'models-path': path.resolve('.', 'models'),
+        'seeders-path': path.resolve('.', 'seeders'),
+        'url': 'sqlite:' + path.resolve(config.db.options.storage)
+    }
+} else {
+    module.exports = {
+        'migrations-path': path.resolve('.', 'migrations'),
+        'models-path': path.resolve('.', 'models'),
+        'seeders-path': path.resolve('.', 'seeders')
+    }
+}
