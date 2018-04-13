@@ -9,6 +9,7 @@ try {
 
 var createError = require('http-errors');
 var express = require('express');
+var i18n = require('./i18n');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -26,6 +27,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(i18n);
+
 
 app.use(logger('dev'));
 app.use(express.json());
