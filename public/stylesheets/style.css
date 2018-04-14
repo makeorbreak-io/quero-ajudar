@@ -74,6 +74,11 @@ div.c-wrapper{
   padding-top: 2px;
 }
 
+.mega-padding{
+  padding-top:200px;
+  padding-bottom:200px;
+}
+
 footer {
   background-color: #212529;
 }
