@@ -15,7 +15,7 @@ router.get('/',
 
 /* GET organization information. */
 router.get('/:name',
-	//organizationController.retrieve,
+	organizationController.retrieve,
 	function(req, res) {
 		res.render('pages/organizations/view', { title: 'Organization', organization:  res.locals.organization});
 	}

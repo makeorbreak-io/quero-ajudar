@@ -15,9 +15,9 @@ router.get('/',
 
 /* GET campaign information. */
 router.get('/:name',
-	//campaignController.retrieve,
+	campaignController.retrieve,
 	function(req, res) {
-		res.render('pages/campaigns/view', { title: 'Campaign', campaigns:  res.locals.organization});
+		res.render('pages/campaigns/view', { title: 'Campaign', campaign:  res.locals.campaign});
 	}
 );
 
