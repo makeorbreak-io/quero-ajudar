@@ -8,7 +8,7 @@
     "dev": "cross-env CONFIG_PATH=/etc/triptogo/dev_config.json node ./bin/www",
     "local_dev": "cross-env CONFIG_PATH=./configs/local_dev_config.json node ./bin/www",
     "local_dev_migrate": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:migrate",
-    "local_dev_migrate_undo": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:migrate:undo",
+    "local_dev_migrate_undo": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:migrate:undo:all",
     "local_dev_seed": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:seed:all",
     "local_dev_seed_undo": "cross-env CONFIG_PATH=./configs/local_dev_config.json node_modules/.bin/sequelize db:seed:undo:all",
     "eslint": "./node_modules/.bin/eslint ."

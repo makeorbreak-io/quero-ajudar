@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
 	var AdminUser = sequelize.define('AdminUser', {
-		username: {
+		email: {
 			allowNull: false,
 			unique: true,
-			type: DataTypes.STRING(50)
+			type: DataTypes.STRING
 		},
 		password: {
 			allowNull: false,
@@ -20,10 +20,6 @@ module.exports = (sequelize, DataTypes) => {
 			defaultValue: '',
 			type: DataTypes.STRING(50)
 		},
-		privileges: {
-			allowNull: false,
-			type: DataTypes.ENUM('admin', 'regular', 'support')
-		},
 		disabled: {
 			allowNull: false,
 			defaultValue: false,
@@ -31,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}, {});
 	AdminUser.associate = function(models) {
-		// associations can be defined here
 	};
 	return AdminUser;
 };
