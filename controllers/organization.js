@@ -33,7 +33,7 @@ module.exports = {
 		Organization
 			.findOne({
 				where: {
-					name: req.params.name
+					urlName: req.params.name
 				}
 			})
 			.then(organization => {

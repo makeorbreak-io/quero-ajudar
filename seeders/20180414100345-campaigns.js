@@ -4,6 +4,7 @@ module.exports = {
     return queryInterface.bulkInsert('Campaigns', [
     {
         name: 'Juntos pelos  animais',
+		urlName: 'juntos-pelos-animais',
         description: 'Associação de apoio e resgate dos animais, defesa contra os seus maus tratos e luta pela sua dignidade e direitos.',
         category: '1',
         website:'www.juntospelosanimais.com',
@@ -19,6 +20,7 @@ module.exports = {
     },
     {
         name: 'Associação de Apoio à Vitima',
+		urlName: 'apav',
         description: 'Apoiar as vítimas de crime, suas famílias e amigos, prestando-lhes serviços de qualidade, gratuitos e confidenciais e contribuir para o aperfeiçoamento das políticas públicas, sociais e privadas centradas no estatuto da vítima.',
         category: '2',
         website:'www.apav.pt',
@@ -32,6 +34,7 @@ module.exports = {
     },
     {
         name: 'Alcoolicos Anonimos',
+		urlName: 'alcoolicos-anonimos',
         description: 'O nosso objetivo á ajudar alcoólicos a ultrapassarem o seu vicio, e dar o apoio necessário a ex-alc´´olico para que não tenham uma recaida',
         category: '4',
         website: 'www.alcoolicos-anonimos.pt',

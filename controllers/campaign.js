@@ -33,7 +33,7 @@ module.exports = {
 		Campaign
 			.findOne({
 				where: {
-					name: req.params.name
+					urlName: req.params.name
 				}
 			})
 			.then(campaign => {
