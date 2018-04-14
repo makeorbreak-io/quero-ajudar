@@ -30,8 +30,15 @@ module.exports = {
 				},
 				type: Sequelize.INTEGER
 			},
-			name: {
-				type: Sequelize.STRING
+			amount:{
+				allowNull:false,
+				type: Sequelize.INTEGER
+			},
+			category: {
+				type: Sequelize.ENUM(config.categories)
+			},
+			location: {
+				type: Sequelize.ENUM(config.location)
 			},
 			createdAt: {
 				allowNull: false,

@@ -11,11 +11,11 @@
     <div class="row">
 
         <div class="col-12">
-            <h1 class="text-center"><%= __('TOTAL') %></h1>
+            <h1 class="text-center"><span class="bigFont"><%= __('TOTAL') %></span></h1>
         </div>
 
         <div class="col-12">
-            <h1 class="text-center">1.123.123 €</h1>
+            <h1 class="text-center"><span class="mediumFont">1.123.123 €</span></h1>
         </div>
 
         <div class="col-12 text-center">
@@ -28,7 +28,7 @@
                     <h1 class="text-center"><%= __('CONTRIBUIDORES') %></h1>
                 </div>
                 <div class="col-12">
-                    <h1 class="text-center">123</h1>
+                    <h1 class="text-center"><span class="bigFont">01234</span></h1>
                 </div>
             </div>
         </div>
@@ -38,16 +38,17 @@
                     <h1 class="text-center"><%= __('ASSOCIACOES') %></h1>
                 </div>
                 <div class="col-12">
-                    <h1 class="text-center">67890</h1>
+                    <h1 class="text-center"><span class="bigFont">56789</span></h1>
                 </div>
             </div>
         </div>
-        <div class="col-12 text-center">
-            <button type="button" class="btn btn-primary btn-lg"><%= __('QUERO_AJUDAR') %></button>
+        <div class="col-12 col-md-12 text-center">
+            <button type="button" class="btn btn-primary btn-lg"><span class="bigFont"><%= __('QUERO_AJUDAR') %></span></button>
         </div>
 
         <div class="col-12">
-            <h1 class="text-center"><%= __('ESTE_MES') %></h1>
+            </br>
+            <h1 class="text-center"><span class="bigFont"><%= __('ESTE_MES') %></span></h1>
         </div>
 
         <div class="col-12 col-md-4 text-center rightBorder">
@@ -69,7 +70,11 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center"><%= __('PREMIOS') %></h1>
+                    <a class="paddingBottom"></a>
+                    <a class="paddingBottom"></a>
+                    <a class="paddingBottom"></a>
+                </br>
+                    <h1 class="text-center"><span class="bigFont"><%= __('PREMIOS') %></span></h1>
                 </div>
                 <div class="col-12">
                     <p class="text-center"><%= __('PREMIOS_TEXT') %></p>
@@ -85,7 +90,10 @@
         </div>
 
         <div class="col-12">
+            <a class="paddingTop"></a>
+            <a class="paddingTop"></a>
             <h1 class="text-center"><%= __('PARCEIROS') %></h1>
+            </br>
         </div>
 
         <div class="col-6 col-md-3 text-center">
@@ -100,7 +108,7 @@
         <div class="col-6 col-md-3 text-center">
             <img src="/images/partners/blipLogo.svg" class="partners">
         </div>
-
+        <a class="paddingTop"></a>
     </div>
 </div>
 <% include ../partials/footer %>

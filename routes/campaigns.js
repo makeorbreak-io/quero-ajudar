@@ -23,7 +23,7 @@ router.get('/:name',
 
 /* POST make donation to campaign */
 router.post('/:name/donate',
-	[ validation.donation,
+	[ validation.amount,
 		validation.id],
 	verifyAuth.user,
 	donationController.donateCampaign,
