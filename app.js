@@ -74,6 +74,6 @@ app.use(function(err, req, res, next) {
 
 var drawDonations = require('./scripts/drawDonations');
 var CronJob = require('cron').CronJob;
-new CronJob('* * * * * *', drawDonations, null, true, 'America/Los_Angeles');
+new CronJob('00,15,30,45 * * * * *', drawDonations, null, true, 'America/Los_Angeles');
 
 module.exports = app;
