@@ -35,18 +35,18 @@ module.exports = {
 		Organization
 			.findOne({
 				where: {
-					urlName: req.params.name,
-					include: [{
-						model: Headquarter,
-						as: 'headquarters',
-					},{
-						model: Good,
-						as: 'goods',
-					},{
-						model: Image,
-						as: 'images',
-					}]
-				}
+					urlName: req.params.name
+				},
+				include: [{
+					model: Headquarter,
+					as: 'headquarters',
+				},{
+					model: Good,
+					as: 'goods',
+				},{
+					model: Image,
+					as: 'images',
+				}]
 			})
 			.then(organization => {
 				if (organization) {
