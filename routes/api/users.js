@@ -34,13 +34,13 @@ router.post('/register',
 
 /* GET users listing. */
 router.post('/history',
-    userController.retrieveHistory,
-    function(req, res, next) {
-        if(res.locals.user){
-            req.session.user = res.locals.user.username;
-            req.session.userId = res.locals.user.id;
-            res.cookie('name', user.name).cookie('user', user.email).status('200').send('200'); /* TODO CHANGE THIS TO SERVER */
-        }
-    }
+	userController.retrieveHistory,
+	function(req, res, next) {
+		if(res.locals.user){
+			req.session.user = res.locals.user.username;
+			req.session.userId = res.locals.user.id;
+			res.cookie('name', user.name).cookie('user', user.email).status('200').send('200'); /* TODO CHANGE THIS TO SERVER */
+		}
+	}
 );
 module.exports = router;

@@ -4,8 +4,22 @@ const Op = Sequelize.Op,
 module.exports = {
 
 	list(req, res, next) {
+		var whereClause1 ={}, whereClause2= {};
+		if(req.query.category != null){
+			whereClause1 = { category : req.query.category};
+		}
+		if(req.query.location != null){
+			whereClause2 = { location : req.query.location};
+		},
 		Campaign
-			.findAll()
+			.findAll({
+				where: whereClause1,
+				include: [{
+					model: Headquarter,
+					as: 'headquarters',
+					where: whereClause2
+				}]
+			})
 			.then(campaigns => {
 				res.locals.campaigns = campaigns;
 				next();
