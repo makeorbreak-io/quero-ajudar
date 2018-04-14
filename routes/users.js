@@ -21,7 +21,7 @@ router.post('/donate',
 	verifyAuth.user,
 	userController.donate,
 	function(req, res) {
-		res.render('pages/index', { title: 'USer' });
+		res.render('pages/index', { title: 'User' });
 	}
 );
 
