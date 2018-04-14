@@ -9,6 +9,7 @@ try {
 
 var createError = require('http-errors');
 var express = require('express');
+var i18n = require('./i18n');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -20,12 +21,18 @@ Sequelize = require('sequelize');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var usersRouteAPI = require('./routes/api/users');
+var organizationsRouter = require('./routes/organizations');
+var campaignsRouter = require('./routes/campaigns');
+var partnersRouter = require('./routes/partners');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(i18n);
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -42,6 +49,10 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/users', usersRouteAPI);
+app.use('/associacoes', organizationsRouter);
+app.use('/campanhas', campaignsRouter);
+app.use('/parceiros', partnersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

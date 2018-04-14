@@ -1,8 +1,32 @@
 body {
-  background: url(../images/background.jpg);
+  font-family: 'Montserrat', sans-serif;
+  background: url(/images/background.jpg);
   background-size:100%;
   width: 100%;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.img-fluid {
+  max-width: 45%;
+  height: auto;
+}
+
+#moneyBag {
+  height: 200px;
+  width: auto;
+}
+
+.partners {
+  height: auto;
+  width: 50%;
+}
+
+.container-background {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.rightBorder {
+  border-right-style:solid;
+  border-right-width: thin;
 }
 
 a {
@@ -48,4 +72,12 @@ div.c-wrapper{
   background: lightgray;
   border-radius: 15px;
   padding-top:2px;
+
+footer {
+  background-color: #212529;
+}
+
+.card {
+  width: 100%;
+  height: 600px;
 }

@@ -1,28 +1,32 @@
 'use strict';
+
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('Messages', {
+		return queryInterface.createTable('DonationsOrganizations', {
 			id: {
-				allowNull: false,
-				autoIncrement: true,
 				primaryKey: true,
+				autoIncrement: true,
 				type: Sequelize.INTEGER
 			},
-			adminId: {
+			donationId: {
 				allowNull: false,
 				references: {
-					model: 'AdminUsers',
+					model: 'Donations',
 					key: 'id'
 				},
 				type: Sequelize.INTEGER
 			},
-			subject: {
+			organizationId: {
 				allowNull: false,
-				type: Sequelize.STRING(50)
+				references: {
+					model: 'Organizations',
+					key: 'id'
+				},
+				type: Sequelize.INTEGER
 			},
-			content: {
+			amount: {
 				allowNull: false,
-				type: Sequelize.TEXT
+				type: Sequelize.FLOAT
 			},
 			createdAt: {
 				allowNull: false,
@@ -34,7 +38,8 @@ module.exports = {
 			}
 		});
 	},
+
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.dropTable('Messages');
+		return queryInterface.dropTable('DonationsOrganizations');
 	}
 };

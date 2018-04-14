@@ -1,36 +1,37 @@
 'use strict';
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('AdminUsers', {
+		return queryInterface.createTable('Organizations', {
 			id: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 				type: Sequelize.INTEGER
 			},
-			email: {
+			name: {
 				allowNull: false,
-				unique: true,
+				type: Sequelize.STRING(50)
+			},
+			description: {
+				allowNull: false,
+				type: Sequelize.TEXT
+			},
+			logo: {
+				allowNull: false,
 				type: Sequelize.STRING
 			},
-			password: {
+			category: {
 				allowNull: false,
+				type: Sequelize.ENUM(config.categories)
+			},
+			website: {
 				type: Sequelize.STRING
 			},
-			firstName: {
-				allowNull: false,
-				defaultValue: '',
+			facebook: {
 				type: Sequelize.STRING
 			},
-			lastName: {
-				allowNull: false,
-				defaultValue: '',
+			instagram: {
 				type: Sequelize.STRING
-			},
-			disabled: {
-				allowNull: false,
-				defaultValue: false,
-				type: Sequelize.BOOLEAN
 			},
 			createdAt: {
 				allowNull: false,
@@ -43,6 +44,6 @@ module.exports = {
 		});
 	},
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.dropTable('AdminUsers');
+		return queryInterface.dropTable('Organizations');
 	}
 };

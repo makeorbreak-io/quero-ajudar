@@ -5,22 +5,21 @@ const express = require('express'),
 	validation = require('./middlewares/validations');
 
 
-/* GET users listing. */
+/* GET user info. */
 router.get('/',
-	function(req, res, next) {
-		res.render('index', { title: 'Users' });
+	userController.retrieve,
+	function(req, res) {
+		res.render('pages/index', { title: 'USer', user:  res.locals.user});
 	}
 );
 
-
-/* GET users listing. */
-router.post('/todo',
-	verifyAuth.user,
-	[ validation.clientIdentifier,
-		validation.password ],
-	function(req, res, next) {
-		res.send('respond with a resource');
+/* POST donate */
+router.post('/donate',
+	userController.donate,
+	function(req, res) {
+		res.render('pages/index', { title: 'USer' });
 	}
 );
+
 
 module.exports = router;

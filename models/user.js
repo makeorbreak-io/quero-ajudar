@@ -1,19 +1,24 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
 	var User = sequelize.define('User', {
-		clientNumber: {
-			allowNull: false,
-			primaryKey: true,
-			type: DataTypes.INTEGER.UNSIGNED
-		},
-		username: {
+		email: {
 			allowNull: false,
 			unique: true,
-			type: DataTypes.STRING(50)
+			type: DataTypes.STRING
 		},
 		password: {
 			allowNull: false,
 			type: DataTypes.STRING
+		},
+		firstName: {
+			allowNull: false,
+			defaultValue: '',
+			type: DataTypes.STRING(50)
+		},
+		lastName: {
+			allowNull: false,
+			defaultValue: '',
+			type: DataTypes.STRING(50)
 		},
 		activated: {
 			allowNull: false,
@@ -27,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}, {});
 	User.associate = function(models) {
-		User.belongsToMany(models.Message, {through: 'UsersMessages', as: 'messages', foreignKey: 'clientNumber'});
+		User.hasMany(models.Donation, {as: 'donations'});
 	};
 	return User;
 };
