@@ -33,6 +33,46 @@ a {
   color: #00B7FF;
 }
 
+.transparent{
+  opacity: 0.4;
+}
+.scrollable {
+  height: 600px; /* or any value */
+  overflow-y: auto;
+}
+
+.topBuffer{
+  padding-top: 2.5em;
+}
+.lowerBuffer{
+  padding-bottom: 2em;
+}
+
+.smallTopBuffer{
+  padding-top:0.5em;
+}
+
+
+
+div.c-wrapper{
+  width: 80%; /* for example */
+  margin: auto;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img{
+  width: 100%; /* use this, or not */
+  margin: auto;
+}
+
+.border-campaign{
+  border-style: solid;
+  border-width: medium;
+  border-color: darkgray;
+  background: lightgray;
+  border-radius: 15px;
+  padding-top:2px;
+
 footer {
   background-color: #212529;
 }
