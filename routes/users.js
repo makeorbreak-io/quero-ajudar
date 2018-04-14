@@ -15,7 +15,7 @@ router.get('/',
 
 /* POST donate randomly. */
 router.post('/donate',
-	[ validation.donation,
+	[ validation.amount,
 		validation.category,
 		validation.location],
 	verifyAuth.user,

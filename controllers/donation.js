@@ -11,7 +11,9 @@ module.exports = {
 		} else {
 			Donation
 				.create({
-					amount: req.body.amount, userId: req.session.userId, organizationId: req.body.organizationId
+					amount: req.body.amount,
+					userId: req.session.userId,
+					organizationId: req.body.organizationId
 				}).then(donation => {
 					next();
 				})
@@ -28,11 +30,15 @@ module.exports = {
 		} else {
 			Donation
 				.create({
-					amount: req.body.amount, userId: req.session.userId, campaignId: req.body.campaignId
-				}).then(donation => {
+					amount: req.body.amount,
+					userId: req.session.userId,
+					campaignId: req.body.id
+				})
+				.then(donation => {
 					next();
 				})
 				.catch(err =>{
+					console.log(err);
 					res.status(500).json();
 				});
 		}
