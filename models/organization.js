@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 			type: DataTypes.TEXT
 		},
+		rating: {
+			allowNull: false,
+			type: Sequelize.INTEGER
+		},
 		logo: {
 			allowNull: false,
 			type: DataTypes.STRING

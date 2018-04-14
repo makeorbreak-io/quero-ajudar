@@ -23,13 +23,14 @@ router.post('/login',
 /* POST register user. */
 router.post('/register',
 	[ validation.email,
-		validation.password,
 		validation.firstName,
-		validation.lastName ],
+		validation.lastName,
+		validation.password,
+		validation.passwordConfirmation ],
 	userController.register,
 	function(req, res) {
 		if(res.locals.user){
-			req.session.user = res.locals.user.username;
+			req.session.email = res.locals.user.email;
 			req.session.userId = res.locals.user.id;
 			res.cookie('userId', res.locals.user.id).cookie('email', res.locals.user.email).status(200).send(); /* TODO CHANGE THIS TO SERVER */
 		} else{
