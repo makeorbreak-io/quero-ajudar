@@ -24,7 +24,7 @@ module.exports = {
 						next();
 					}
 					else {
-					    res.status(400).json();
+						res.status(400).json();
 					}
 				})
 				.catch(err => {
@@ -48,7 +48,7 @@ module.exports = {
 					if (!user) {
 						User
 							.create({
-								email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName
+								email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName, activated: true, disable: false
 							})
 							.then(user => {
 								res.locals.user = user;
@@ -66,6 +66,21 @@ module.exports = {
 				});
 		}
 	},
+	retrieve: function(req, res, next){
+		User
+			.findOne({
+				where: {
+					id: req.session.userId
+				}
+			})
+			.then(user => {
+				res.locals.user = user;
+				next();
+			})
+			.catch(err=>{
+				res.status(500).json();
+			});
+	},
 	donateOrganization: function(req, res, next) {
 		const errors = validationResult(req);
 		console.log(errors);
@@ -76,7 +91,7 @@ module.exports = {
 				.create({
 					amount: req.body.amount, userId: req.session.userId, organizationId: req.body.organizationId
 				}).then(donation => {
-				    next();
+					next();
 				})
 				.catch(err =>{
 					res.status(500).json();
@@ -100,4 +115,37 @@ module.exports = {
 				});
 		}
 	},
-};
+	donate: function(req, res, next){
+		const errors = validationResult(req);
+		console.log(errors);
+		if(!errors.isEmpty()){
+			res.status(400).json({errors: errors.mapped(), errorCode: 106}); //106 -> Error in input validation
+		} else {
+			Donation
+				.create({
+					amount: req.body.amount, userId: req.session.userId, category: req.body.category, location: req.body.location
+				})
+				.then(donation=>{
+					next();
+				})
+				.catch(err=>{
+					res.status(500).json();
+				});
+		}
+	},
+	retrieveHistory: function(req, res, next){
+		Donation
+			.findAll({
+				where:{
+					userId: req.body.userId
+				}
+			})
+			.then(info=>{
+				next();
+			})
+			.catch(err=>{
+				res.status(500).json();
+
+			});
+	}
+};1;

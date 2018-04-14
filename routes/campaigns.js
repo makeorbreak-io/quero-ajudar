@@ -7,7 +7,7 @@ const express = require('express'),
 router.get('/',
 	campaignController.list,
 	function(req, res) {
-		res.render('pages/campaigns', { title: 'Campaigns', campaigns:  res.locals.campaigns});
+		res.render('pages/campaigns/index', { title: 'Campaigns', campaigns:  res.locals.campaigns});
 	}
 );
 
