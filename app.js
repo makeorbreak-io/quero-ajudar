@@ -49,7 +49,7 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/users', usersRouteAPI);
+app.use('/api/users', usersRouteAPI);
 app.use('/associacoes', organizationsRouter);
 app.use('/campanhas', campaignsRouter);
 app.use('/parceiros', partnersRouter);
