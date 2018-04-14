@@ -1,5 +1,7 @@
 const Op = Sequelize.Op,
 	Organization = require('../models/index').Organization,
+	Image = require('../models/index').Image,
+	Good = require('../models/index').Good,
 	Headquarter = require('../models/index').Headquarter;
 
 module.exports = {
@@ -33,7 +35,17 @@ module.exports = {
 		Organization
 			.findOne({
 				where: {
-					name: req.params.name
+					urlName: req.params.name,
+					include: [{
+						model: Headquarter,
+						as: 'headquarters',
+					},{
+						model: Good,
+						as: 'goods',
+					},{
+						model: Image,
+						as: 'images',
+					}]
 				}
 			})
 			.then(organization => {

@@ -15,16 +15,18 @@ module.exports = {
 			User
 				.findOne({
 					where: {
-						id: req.params.id
+						email: req.body.email
 					}
 				})
 				.then(user => {
-					if (bcrypt.compareSync(req.body.password, user.password)) {
-						res.locals.user = user;
-						next();
-					}
-					else {
-						res.status(400).json();
+					if(user){
+						if (bcrypt.compareSync(req.body.password, user.password)) {
+							res.locals.user = user;
+							next();
+						}
+						else {
+							res.status(401).json();
+						}
 					}
 				})
 				.catch(err => {
@@ -46,15 +48,22 @@ module.exports = {
 				})
 				.then(user => {
 					if (!user) {
+						var hash = bcrypt.hashSync(req.body.password, 10);
 						User
 							.create({
-								email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName, activated: true, disable: false
+								email: req.body.email,
+								password: hash,
+								firstName: req.body.firstName,
+								lastName: req.body.lastName,
+								activated: true,
+								disabled: false
 							})
 							.then(user => {
 								res.locals.user = user;
 								next();
 							})
 							.catch(err => {
+								console.log(err);
 								res.status(500).json();
 							});
 					} else {
@@ -62,6 +71,7 @@ module.exports = {
 					}
 				})
 				.catch(err => {
+					console.log(err);
 					res.status(500).json();
 				});
 		}

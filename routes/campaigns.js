@@ -15,15 +15,15 @@ router.get('/',
 
 /* GET campaign information. */
 router.get('/:name',
-	//campaignController.retrieve,
+	campaignController.retrieve,
 	function(req, res) {
-		res.render('pages/campaigns/view', { title: 'Campaign', campaigns:  res.locals.organization});
+		res.render('pages/campaigns/view', { title: 'Campaign', campaign:  res.locals.campaign});
 	}
 );
 
 /* POST make donation to campaign */
 router.post('/:name/donate',
-	[ validation.donation,
+	[ validation.amount,
 		validation.id],
 	verifyAuth.user,
 	donationController.donateCampaign,

@@ -15,7 +15,7 @@ router.get('/',
 
 /* GET organization information. */
 router.get('/:name',
-	//organizationController.retrieve,
+	organizationController.retrieve,
 	function(req, res) {
 		res.render('pages/organizations/view', { title: 'Organization', organization:  res.locals.organization});
 	}
@@ -23,8 +23,8 @@ router.get('/:name',
 
 /* POST make donation to organization. */
 router.post('/:name/donate',
-	[ validation.donation,
-		validation.id],
+	[ validation.amount,
+		validation.id ],
 	verifyAuth.user,
 	donationController.donateOrganization,
 	function(req, res) {

@@ -11,7 +11,7 @@
                             <span>Email</span>
                         </div>
                         <div class="form-group col-md-9" >
-                            <input type="email" placeholder="Email" style="width:100%">
+                            <input id="loginEmail" type="email" placeholder="Email" style="width:100%">
                         </div>
                     </div>
                     <div class="form-row">
@@ -19,7 +19,7 @@
                             <span>Password</span>
                         </div>
                         <div class="form-group col-md-9">
-                            <input type="password" placeholder="*****" style="width:100%">
+                            <input id="loginPassword" type="password" placeholder="*****" style="width:100%">
                         </div>
                     </div>
                     <button class="btn btn-block btn-primary">Login</button>
@@ -40,18 +40,21 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <input type="email" placeholder="Email" style="width:100%">
+                        <input id="registerEmail" type="email" placeholder="Email" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="First Name" style="width:100%">
+                        <input id="registerFirstName" type="text" placeholder="First Name" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Last Name" style="width:100%">
+                        <input id="registerLastName" type="text" placeholder="Last Name" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="****" style="width:100%">
+                        <input id="registerPassword" type="password" placeholder="****" style="width:100%">
                     </div>
-                    <button class="btn btn-block btn-primary">Registar agora</button>
+                    <div class="form-group">
+                        <input id="registerPasswordConfirmation" type="password" placeholder="****" style="width:100%">
+                    </div>
+                    <button id="doRegister" class="btn btn-block btn-primary">Registar agora</button>
                 </form>
             </div>
             <div class="modal-footer">

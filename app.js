@@ -25,6 +25,7 @@ var usersRouteAPI = require('./routes/api/users');
 var organizationsRouter = require('./routes/organizations');
 var campaignsRouter = require('./routes/campaigns');
 var partnersRouter = require('./routes/partners');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.use('/api/users', usersRouteAPI);
 app.use('/associacoes', organizationsRouter);
 app.use('/campanhas', campaignsRouter);
 app.use('/parceiros', partnersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -69,5 +71,9 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
+
+var drawDonations = require('./scripts/drawDonations');
+var CronJob = require('cron').CronJob;
+new CronJob('* * * * * *', drawDonations, null, true, 'America/Los_Angeles');
 
 module.exports = app;
