@@ -1,0 +1,8 @@
+Bem-Vindo!
+Caro firstName lastName,
+
+A sua nova conta na plataforma QueroAjudar.pt foi criada. Bem-Vindo á comunidade!
+De agora em diante, por favor, faça o login usando este endereço de email e a password que definiu no registo.
+Se quiser fazer alguma alteração á sua conta por favor dirija-se ao nosso website www.queroajudar.pt.
+
+Obrigado novamente por se registar.

@@ -1,0 +1,11 @@
+Olá firstName lastName!
+
+Muito obrigado pela sua doação realizada a Date(). A sua doação de 420 euros foi entregue com sucesso ás seguintes Instituições, aproveite para aprender um pouco
+mais acerca delas:
+
+[link]www.instituição2.com[link]
+[link]www.instituição2.com[link]
+[link]www.instituição2.com[link]
+
+Mais uma vez, muito obrigado pela sua contribuição. Esperemos voltar a contar consigo.
+Até breve!
