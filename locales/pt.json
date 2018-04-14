@@ -6,8 +6,19 @@
 	"PREMIOS": "Prémios",
 	"PREMIOS_TEXT": "Ao ajudar quem mais precisa habilita-se a ganhar todos os meses uma grande variedade de prémios!",
 	"PARCEIROS": "Parceiros",
+	"PARCEIROS2": "Os Nossos Parceiros",
 	"ESTE_MES": "Este Mês",
 	"TOTAL_MES": "Montante",
 	"CONTRIBUIDORES_MES": "Contribuidores",
-	"ASSOCIACOES_MES": "Associações"
+	"ASSOCIACOES_MES": "Associações",
+	"FILTRAR_POR": "FILTRAR_POR",
+	"CATEGORIA": "Categoria",
+	"CATEGORIA1": "Categoria1",
+	"CATEGORIA2": "Categoria2",
+	"CATEGORIA3": "Categoria3",
+	"LOCALIZACAO": "LOCALIZACAO",
+	"LOCALIZACAO1": "LOCALIZACAO1",
+	"LOCALIZACAO2": "LOCALIZACAO2",
+	"LOCALIZACAO3": "LOCALIZACAO3",
+	"SABER_MAIS": "Saber Mais"
 }

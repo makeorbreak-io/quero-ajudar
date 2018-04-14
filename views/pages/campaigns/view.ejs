@@ -11,11 +11,12 @@
 
         </div>
         <div class="col-10 col-md-6 text-left">
-            <h1>Vamos ajudar Pedrogão!!</h1>
+            <h1>Vamos ajudar Pedrogão!</h1>
         </div>
-        <div class="col-2 col-md-2">
-            <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#donateOrganizationModal">
-                Quero Ajudar</button>
+        <div class="col-2 col-md-2 btn-lg text-right">
+            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#exampleModal">
+                <%= __('QUERO_AJUDAR') %>
+            </button>
         </div>
         <div class="col-md-2"></div>
 
@@ -29,24 +30,18 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="./images/fire1.jpg" alt="First slide">
+                        <img class="d-block img-fluid" src="/images/fire1.jpg" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>ola</h3>
-                            <p>123</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="./images/fire2.jpg" alt="Second slide">
+                        <img class="d-block img-fluid" src="/images/fire2.jpg" alt="Second slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>ola</h3>
-                            <p>123</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="./images/fire3.jpg" alt="Third slide">
+                        <img class="d-block img-fluid" src="/images/fire3.jpg" alt="Third slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>ola</h3>
-                            <p>123</p>
                         </div>
                     </div>
                 </div>
@@ -68,100 +63,108 @@
         </div>
         <div class ="col-12 col-md-8 text-left">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu risus nec mi pulvinar sagittis.
-                Vivamus vel scelerisque ipsum. Duis luctus arcu ante, vitae tempor ex ullamcorper tincidunt.
-                Phasellus fermentum, turpis sit amet laoreet ornare, purus lacus molestie neque, sit amet vehicula
-                ante urna eu nisl. Donec vitae vehicula orci, non ultrices mauris. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Aliquam a posuere nisl. Nullam lacinia pretium auctor.
-                Ut in dolor neque. Donec dictum id enim non sodales. Vivamus id enim lectus.
-                Etiam tristique, enim consectetur facilisis finibus, orci turpis fermentum quam,
-                id sollicitudin ante velit tincidunt purus.
+                Descrição da Campanhã.
             </p>
         </div>
         <div  class="col-0 col-md-2">
         </div>
     </div>
-</div>
-<div class="row text-center topBuffer">
-    <div class="col-0 col-md-3">
-    </div>
-    <div class="col-12 col-md-6 text-center">
-        <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#donateOrganizationModal">
-            Quero Ajudar</button>
-    </div>
-    <div class="col-0 col-md-3">
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 col-md-12" style="padding:50px">
-        <h1 class="text-center">Outras maneiras de ajudar</h1>
-    </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-4 col-md-2 text-center">
-        <img src="./images/clothes_icon.png" alt="t-shirt icon" style="width:100px;height:100px">
-        <p>Roupa</p>
-    </div>
-    <div class="col-4 col-md-2 text-center">
-        <img src="./images/food_icon.jpg" alt="food icon" style="width:100px;height:100px">
-        <p>Comida</p>
-    </div>
-    <div class="col-4 col-md-2 text-center">
-        <img src="./images/toys_icon.png" alt="toys icon" style="width:100px;height:100px">
-        <p>Brinquedos</p>
-    </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-4 col-md-2 text-center">
-        <img src="./images/school_supplies_icon.png" alt="school supplies icon" style="width:100px;height:100px">
-        <p>Material Escolar</p>
-    </div>
 
-    <div class="col-4 col-md-2 text-center">
-        <img src="./images/cleaning_supplies_icon.png" alt="cleaning supplies icon" style="width:100px;height:100px">
-        <p>Material de Limpeza</p>
+    <div class="row text-center topBuffer">
+        <div class="col-0 col-md-3">
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                <%= __('QUERO_AJUDAR') %>
+            </button>
+        </div>
+        <div class="col-0 col-md-3">
+        </div>
     </div>
-    <div class="col-4 col-md-2 text-center">
-        <img src="./images/books_icon.png" alt="books icon" style="width:100px;height:100px">
-        <p>Livros</p>
-    </div>
-    <div class="col-md-3">
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-12 col-md-6">
-        <h1 class=" text-left">Localização</h1>
-    </div>
-    <div class="col-md-3">
-    </div>
+    <div class="row">
+        <div class="col-12 col-md-12" style="padding:50px">
+            <h1 class="text-center">Outras maneiras de ajudar</h1>
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-4 col-md-2 text-center">
+            <img src="/images/clothes_icon.png" alt="t-shirt icon" style="width:100px;height:100px">
+            <p>Roupa</p>
+        </div>
+        <div class="col-4 col-md-2 text-center">
+            <img src="/images/food_icon.svg" alt="food icon" style="width:100px;height:100px">
+            <p>Comida</p>
+        </div>
+        <div class="col-4 col-md-2 text-center">
+            <img src="/images/toys_icon.png" alt="toys icon" style="width:100px;height:100px">
+            <p>Brinquedos</p>
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-4 col-md-2 text-center">
+            <img src="/images/school_supplies_icon.png" alt="school supplies icon" style="width:100px;height:100px">
+            <p>Material Escolar</p>
+        </div>
 
-</div>
-<div class = "row">
-    <div class="col-md-3">
+        <div class="col-4 col-md-2 text-center">
+            <img src="/images/cleaning_supplies_icon.png" alt="cleaning supplies icon" style="width:100px;height:100px">
+            <p>Material de Limpeza</p>
+        </div>
+        <div class="col-4 col-md-2 text-center">
+            <img src="/images/books_icon.png" alt="books icon" style="width:100px;height:100px">
+            <p>Livros</p>
+        </div>
+        <div class="col-md-3">
+        </div>
     </div>
-    <div class="col-12 col-md-6 text-left">
-        <h2>Rua de Santo Dor, League,
-            4585-NOOB
-            Nº420
-        </h2>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-12 col-md-6">
+            <h1 class=" text-center">Localização</h1>
+        </div>
+        <div class="col-md-3">
+        </div>
+
     </div>
-    <div class="col-md-3">
+    <div class = "row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <h2>R. do Bonjardim 345, 4000-010 Porto</h2>
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <div id="map">
+
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
     </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-12 col-md-6 text-center">
-        <h1>Mapa</h1>
-    </div>
-    <div class="col-md-3">
-    </div>
-</div>
-</div>
 </div>
 <% include ../../partials/modal %>
 <% include ../../partials/footer %>
+<script>
+    function initMap() {
+        var uluru = {lat: 41.1497299, lng: -8.6102169};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 18,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX8fq5dNVN_dr1eW37fdW0AcZtpD1GKbU&callback=initMap">
+</script>
 </body>
 </html>
