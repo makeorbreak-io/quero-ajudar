@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 			type: DataTypes.TEXT
 		},
-		logo: {
-			allowNull: false,
-			type: DataTypes.STRING
-		},
 		category: {
 			allowNull: false,
 			type: DataTypes.ENUM(config.categories)

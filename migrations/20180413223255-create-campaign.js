@@ -16,10 +16,6 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.TEXT
 			},
-			logo: {
-				allowNull: false,
-				type: Sequelize.STRING
-			},
 			category: {
 				allowNull: false,
 				type: Sequelize.ENUM(config.categories)
