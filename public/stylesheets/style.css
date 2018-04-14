@@ -86,3 +86,20 @@ footer {
 #map {
   height: 600px;
 }
+
+.mediumFont {
+  font-weight: bolder;
+  font-size: 100px;
+}
+
+.bigFont {
+  font-size: 65px;
+}
+
+.paddingBottom {
+  padding-top: 100px;
+}
+
+.paddingTop {
+  padding-top: 100px;
+}
