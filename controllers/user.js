@@ -126,6 +126,7 @@ module.exports = {
 					amount: req.body.amount, userId: req.session.userId, category: req.body.category, location: req.body.location
 				})
 				.then(donation=>{
+					res.locals.info = info;
 					next();
 				})
 				.catch(err=>{
@@ -135,12 +136,13 @@ module.exports = {
 	},
 	retrieveHistory: function(req, res, next){
 		Donation
-			.findAll({
+			.findOne({
 				where:{
-					userId: req.body.userId
+					userId: req.session.userId
 				}
 			})
-			.then(info=>{
+			.then(donations=>{
+				res.locals.donations = donations;
 				next();
 			})
 			.catch(err=>{
