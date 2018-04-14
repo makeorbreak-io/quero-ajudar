@@ -1,5 +1,6 @@
 const Op = Sequelize.Op,
-	Campaign = require('../models/index').Campaign;
+	Campaign = require('../models/index').Campaign,
+	Headquarter = require('../models/index').Headquarter;
 
 module.exports = {
 
@@ -10,7 +11,7 @@ module.exports = {
 		}
 		if(req.query.location != null){
 			whereClause2 = { location : req.query.location};
-		},
+		}
 		Campaign
 			.findAll({
 				where: whereClause1,
