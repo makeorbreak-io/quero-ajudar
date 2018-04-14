@@ -1,6 +1,7 @@
 const express = require('express'),
 	router = express.Router(),
 	userController = require('../../controllers/user'),
+    donationController = require('../../controllers/donation'),
 	verifyAuth  = require('../middlewares/verifyAuth'),
 	validation = require('../middlewares/validations');
 
@@ -42,7 +43,7 @@ router.post('/register',
 /* GET users donation history. */
 router.get('/history',
 	verifyAuth.user,
-	userController.retrieveHistory,
+	donationController.retrieveHistory,
 	function(req, res) {
 		if(res.locals.donations){
 			res.status(200).send(res.locals.donations);

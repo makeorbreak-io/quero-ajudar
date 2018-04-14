@@ -44,4 +44,23 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$('.goToQuantity').click(function () {
+		$('#quantityContainer').css('display','block');
+		$('#categoryContainer').css('display','none');
+		$('#locationContainer').css('display','none');
+	});
+
+	$('.goToCategory').click(function () {
+		$('#quantityContainer').css('display','none');
+		$('#categoryContainer').css('display','block');
+		$('#locationContainer').css('display','none');
+	});
+
+	$('.goToLocation').click(function () {
+		$('#quantityContainer').css('display','none');
+		$('#categoryContainer').css('display','none');
+		$('#locationContainer').css('display','block');
+	});
+
 });
