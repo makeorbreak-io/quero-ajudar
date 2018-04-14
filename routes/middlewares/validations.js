@@ -30,3 +30,17 @@ exports.firstName =
 exports.lastName =
 	body('lastName', 1067)
 		.exists();
+
+exports.donation =
+    body('donation', 1068)
+    	.exists(); //TODO ONLY CONTAIN NUMBERS
+
+exports.category =
+    body('category', 1069); //TODO ONLY CONTAIN ENUM
+
+exports.location =
+    body('location', 10610); //TODO ONLY CONTAIN ENUM
+
+exports.id =
+    body('id', 10611)
+    	.exists();//TODO ONLY CONTAIN NUMBERS

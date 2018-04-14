@@ -13,8 +13,12 @@ router.get('/',
 	}
 );
 
-/* POST donate */
+/* POST donate randomly. */
 router.post('/donate',
+	[ validation.donation,
+		validation.category,
+		validation.location],
+	verifyAuth.user,
 	userController.donate,
 	function(req, res) {
 		res.render('pages/index', { title: 'USer' });
