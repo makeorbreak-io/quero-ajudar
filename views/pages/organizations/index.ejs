@@ -6,12 +6,45 @@
 <body>
 <% include ../../partials/header %>
 <div class = "container container-background text-dark">
-
+<br/>
 
     <div class="row">
 
         <div class="col-12">
-            <h1 class="text-center">Organizações</h1>
+            <h1 class="text-center"><%= __('ASSOCIACOES') %></h1>
+        </div>
+
+        <div class="col-6 col-md-1 text-center">
+            <i class="fas fa-filter fa-2x"></i>
+        </div>
+        <div class="col-6 col-md-2 text-center">
+            <h3><%= __('ASSOCIACOES') %></h3>
+        </div>
+        <div class="col-6 col-md-2 text-center">
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= __('CATEGORIA') %>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#"><%= __('CATEGORIA1') %></a>
+                    <a class="dropdown-item" href="#"><%= __('CATEGORIA2') %></a>
+                    <a class="dropdown-item" href="#"><%= __('CATEGORIA3') %></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 text-left">
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= __('LOCALIZACAO') %>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#"><%= __('LOCALIZACAO1') %></a>
+                    <a class="dropdown-item" href="#"><%= __('LOCALIZACAO2') %></a>
+                    <a class="dropdown-item" href="#"><%= __('LOCALIZACAO3') %></a>
+                </div>
+            </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 text-center">
             <div class="card">
@@ -21,7 +54,7 @@
                     <p class="card-text">Uma resposta necessária, porque "toda a pessoa tem direito a um nível de vida suficiente que lhe assegure e à sua família, a saúde e o bem-estar..."</p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
+                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>
@@ -33,7 +66,7 @@
                     <p class="card-text">A Cáritas Portuguesa tem como missão o desenvolvimento humano e a defesa do bem comum...</p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
+                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>
@@ -45,7 +78,7 @@
                     <p class="card-text">Entidade de referência nacional no apoio ao doente oncológico, na promoção da saúde e na prevenção do cancro.</p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
+                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>
@@ -57,7 +90,7 @@
                     <p class="card-text">A APAV tem como missão apoiar as vítimas de crime, suas famílias e amigos, prestando-lhes serviços de qualidade, gratuitos e confidenciais.</p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
+                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>
