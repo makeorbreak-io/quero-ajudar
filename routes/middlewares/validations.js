@@ -23,3 +23,10 @@ exports.token =
 	body('token',1065)
 		.exists();
 
+exports.firstName =
+	body('firstName', 1066)
+		.exists();
+
+exports.lastName =
+	body('lastName', 1067)
+		.exists();
