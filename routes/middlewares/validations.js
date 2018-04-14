@@ -1,10 +1,8 @@
 const { body } = require('express-validator/check');
 
-exports.clientNumber =
-	body('clientNumber',1061)
-		.exists()
-		.isLength({min: 10})
-		.isLength({max: 10});
+exports.email =
+	body('email', 1061)
+		.exists();
 
 exports.password =
 	body('password',1062)
@@ -23,22 +21,5 @@ exports.via =
 
 exports.token =
 	body('token',1065)
-		.exists();
-
-exports.username =
-	body('username',1066)
-		.exists()
-		.matches(/^[A-Za-z0-9_-]{3,50}$/,'i')
-		.isLength({min: 3})
-		.isLength({max: 50});
-
-exports.clientIdentifier =
-	body('clientIdentifier',1067)
-		.exists()
-		.isLength({min: 3})
-		.isLength({max: 50});
-
-exports.confirmationInfo =
-	body('confirmationInfo',1068)
 		.exists();
 

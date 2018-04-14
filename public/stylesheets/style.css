@@ -15,15 +15,29 @@ body {
   width: auto;
 }
 
-#partners {
+.partners {
   height: auto;
   width: 50%;
 }
 
 .container-background {
-  background-color: #ffffff7d;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.rightBorder {
+  border-right-style:solid;
+  border-right-width: thin;
 }
 
 a {
   color: #00B7FF;
+}
+
+footer {
+  background-color: #212529;
+}
+
+.card {
+  width: 100%;
+  height: 600px;
 }

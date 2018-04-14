@@ -21,6 +21,10 @@ Sequelize = require('sequelize');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var usersRouteAPI = require('./routes/api/users');
+var organizationsRouter = require('./routes/organizations');
+var campaignsRouter = require('./routes/campaigns');
+var partnersRouter = require('./routes/partners');
 
 var app = express();
 
@@ -45,6 +49,10 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/users', usersRouteAPI);
+app.use('/associacoes', organizationsRouter);
+app.use('/campanhas', campaignsRouter);
+app.use('/parceiros', partnersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

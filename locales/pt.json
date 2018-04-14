@@ -1,3 +1,13 @@
 {
-  "TEST": "TESTE"
+	"TOTAL": "Montante Total Angariado",
+	"CONTRIBUIDORES": "Contribuidores",
+	"ASSOCIACOES": "Associações",
+	"QUERO_AJUDAR": "Quero Ajudar",
+	"PREMIOS": "Prémios",
+	"PREMIOS_TEXT": "Ao ajudar quem mais precisa habilita-se a ganhar todos os meses uma grande variedade de prémios!",
+	"PARCEIROS": "Parceiros",
+	"ESTE_MES": "Este Mês",
+	"TOTAL_MES": "Montante",
+	"CONTRIBUIDORES_MES": "Contribuidores",
+	"ASSOCIACOES_MES": "Associações"
 }
