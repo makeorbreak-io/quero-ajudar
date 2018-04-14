@@ -9,7 +9,7 @@ const express = require('express'),
 router.get('/',
 	organizationController.list,
 	function(req, res) {
-		res.render('pages/organizations/index', { title: 'Organizations', organizations:  res.locals.organizations});
+		res.render('pages/organizations/', { title: 'Organizations', organizations:  res.locals.organizations});
 	}
 );
 

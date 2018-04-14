@@ -14,13 +14,13 @@
             <h1 class="text-center"><%= __('ASSOCIACOES') %></h1>
         </div>
 
-        <div class="col-6 col-md-1 text-center">
+        <div class="col-6 col-md-1 text-right">
             <i class="fas fa-filter fa-2x"></i>
         </div>
-        <div class="col-6 col-md-2 text-center">
+        <div class="col-6 col-md-3 text-left">
             <h3><%= __('ASSOCIACOES') %></h3>
         </div>
-        <div class="col-6 col-md-2 text-center">
+        <div class="col-6 col-md-4 text-right">
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= __('CATEGORIA') %>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 col-md-6 text-left">
+        <div class="col-6 col-md-4 text-right">
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= __('LOCALIZACAO') %>
@@ -46,54 +46,20 @@
                 </div>
             </div>
         </div>
+        <% for(var i=0; i< organizations.length; i++) { %>
         <div class="col-12 col-sm-6 col-md-4 text-center">
             <div class="card">
-                <img class="card-img-top" src="/images/organizations/bancoAlimentar.png" alt="Card image cap">
+                <img class="card-img-top" src="<%=organizations[i].logo%>" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Banco Alimentar</h5>
-                    <p class="card-text">Uma resposta necessária, porque "toda a pessoa tem direito a um nível de vida suficiente que lhe assegure e à sua família, a saúde e o bem-estar..."</p>
+                    <h5 class="card-title"><%=organizations[i].name%></h5>
+                    <p class="card-text"><%=organizations[i].description%></p>
                 </div>
                 <div class="card-footer">
                     <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 text-center">
-            <div class="card">
-                <img class="card-img-top" src="/images/organizations/caritas.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Cáritas</h5>
-                    <p class="card-text">A Cáritas Portuguesa tem como missão o desenvolvimento humano e a defesa do bem comum...</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 text-center">
-            <div class="card">
-                <img class="card-img-top" src="/images/organizations/ligaPortuguesaContraCancro.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Liga Portuguesa Contra o Cancro</h5>
-                    <p class="card-text">Entidade de referência nacional no apoio ao doente oncológico, na promoção da saúde e na prevenção do cancro.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 text-center">
-            <div class="card">
-                <img class="card-img-top" src="/images/organizations/apav.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Associação Portuguesa de Apoio à Vítima</h5>
-                    <p class="card-text">A APAV tem como missão apoiar as vítimas de crime, suas famílias e amigos, prestando-lhes serviços de qualidade, gratuitos e confidenciais.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
-                </div>
-            </div>
-        </div>
+        <% } %>
     </div>
 </div>
 <% include ../../partials/footer %>
