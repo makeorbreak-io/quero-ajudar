@@ -11,11 +11,11 @@
                             <span><b>Quantia</b></span>
                         </div>
                         <div class="form-group text-center">
-                            <input type="number" min="1" required>
+                            <input type="number" name="amount" min="1" required>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
-                                <button <%if(userLogged){ %>id="nextBtn"<% } else {%> id="authenticateBtn" <%}%> %>
+                                <button <%if(userLogged){ %>id="nextBtn"<% } else {%> id="authenticateBtn" <%}%>
                                 class="btn btn-primary btn-block" type="button">Seguinte</button>
 
                             </div>

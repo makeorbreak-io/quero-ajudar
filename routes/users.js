@@ -9,7 +9,7 @@ const express = require('express'),
 router.get('/',
 	userController.retrieve,
 	function(req, res) {
-		res.render('pages/index', { title: 'User', user:  res.locals.user, userLogged : req.session.userId});
+		res.render('pages/index', { title: 'User', user:  res.locals.user, userLogged : req.session.userId, categories: config.categories, locations: config.location});
 	}
 );
 
@@ -21,7 +21,7 @@ router.post('/donate',
 	verifyAuth.user,
 	donationController.donate,
 	function(req, res) {
-		res.render('pages/index', { title: 'User' , userLogged : req.session.userId});
+		res.render('pages/index', { title: 'User' , userLogged : req.session.userId, categories: config.categories, locations: config.location});
 	}
 );
 

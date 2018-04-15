@@ -9,7 +9,7 @@ const express = require('express'),
 router.get('/',
 	organizationController.list,
 	function(req, res) {
-		res.render('pages/organizations/', { title: 'Organizations', organizations:  res.locals.organizations, userLogged : req.session.userId});
+		res.render('pages/organizations/', { title: 'Organizations', organizations:  res.locals.organizations, userLogged : req.session.userId, categories: config.categories, locations: config.location});
 	}
 );
 
@@ -17,7 +17,7 @@ router.get('/',
 router.get('/:name',
 	organizationController.retrieve,
 	function(req, res) {
-		res.render('pages/organizations/view', { title: 'Organization', organization:  res.locals.organization, userLogged : req.session.userId, formUrl: '/associacoes/' + req.params.name + '/donate'});
+		res.render('pages/organizations/view', { title: 'Organization', organization:  res.locals.organization, userLogged : req.session.userId, formUrl: '/associacoes/' + req.params.name + '/donate', categories: config.categories, locations: config.location});
 	}
 );
 
