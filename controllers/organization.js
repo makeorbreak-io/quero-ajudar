@@ -28,7 +28,7 @@ module.exports = {
 			})
 			.catch(err => {
 				console.log(err);
-				res.status(500).redirect('/homepage');
+				res.status(500).redirect('/');
 			});
 	},
 	retrieve: function (req, res, next) {

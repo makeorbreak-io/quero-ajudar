@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-    <a class="navbar-brand" href="/">
-        <h3 class="nav-link" href="/">queroajudar.pt</h3>
+    <a href="/">
+        <img border="0" src="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,10 +17,10 @@
                 <a class="nav-link" href="/parceiros">Parceiros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#authenticationModal"><i class="fas fa-user"></i></a>
+                <a class="nav-link" data-toggle="modal" data-target="<% if(userLogged) {%>#infoModal<% } else {%>#authenticationModal<% }%>"><i class="fas fa-user"></i></a>
             </li>
             <li class="nav-item" style="text-align:center;">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#donationModel">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#donationModal">
                     Quero Ajudar
                 </button>
             </li>

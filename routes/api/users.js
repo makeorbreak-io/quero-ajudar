@@ -1,7 +1,7 @@
 const express = require('express'),
 	router = express.Router(),
 	userController = require('../../controllers/user'),
-    donationController = require('../../controllers/donation'),
+	donationController = require('../../controllers/donation'),
 	verifyAuth  = require('../middlewares/verifyAuth'),
 	validation = require('../middlewares/validations');
 

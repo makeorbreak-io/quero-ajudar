@@ -6,44 +6,36 @@
 <body>
 <% include ../../partials/header %>
 <div class = "container container-background">
-    <div class="row">
-        <div class="col-md-2">
-
+    <div class="row" style="padding-bottom:0.5em">
+        <div class="col-xs-12 col-md-8 text-center">
+            <h1><%=campaign.name%></h1>
         </div>
-        <div class="col-10 col-md-6 text-left">
-            <h1>Vamos ajudar Pedrogão!</h1>
-        </div>
-        <div class="col-2 col-md-2 btn-lg text-right">
-            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#exampleModal">
+        <div class="col-xs-12 col-md-4 text-right">
+            <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#donateModal">
                 <%= __('QUERO_AJUDAR') %>
             </button>
         </div>
-        <div class="col-md-2"></div>
-
-        <div class="col-md-2"></div>
-        <div class="col-12 col-md-8 c-wrapper">
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 order-md-12 text-left">
             <div id="carouselSlider" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselSlider" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselSlider" data-slide-to="1"></li>
-                    <li data-target="#carouselSlider" data-slide-to="2"></li>
+                    <% for(var i=1; i<campaign.images.length; i++) {%>
+                    <li data-target="#carouselSlider" data-slide-to="<%=i%>"></li>
+                    <% } %>
                 </ol>
-                <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="/images/fire1.jpg" alt="First slide">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
+                        <img class="d-block w-100" src="<%= campaign.images[0].path %>" alt="...">
                     </div>
+
+                    <% for(var i=1; i<campaign.images.length; i++) {%>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="/images/fire2.jpg" alt="Second slide">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
+                        <img class="d-block w-100" src="<%= campaign.images[i].path %>" alt="...">
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block img-fluid" src="/images/fire3.jpg" alt="Third slide">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
                 <a class="carousel-control-prev" href="#carouselSlider" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -55,96 +47,82 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row smallTopBuffer">
+        <div class="col-xs-12 col-md-6 order-md-1">
+            <div class="text-left">
+                <p><%=campaign.description%></p>
+                <div class="text-left">
+                    <h3><b>Os nossos contactos</b></h3>
+                    <div class="row">
+                        <div class="col-3">
+                            <a href=<%=campaign.facebook%>><i class="fab fa-facebook fa-2x"></i></a>
+                        </div>
+                        <div class="col-3">
+                            <a href=<%=campaign.instagram%>><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                        <div class="col-6">
+                            <a name="website"></a>
+                            <a href=<%=campaign.website%>>O nosso site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="col-0 col-md-2">
-        </div>
-        <div class ="col-12 col-md-8 text-left">
-            <p>
-                Descrição da Campanhã.
-            </p>
-        </div>
-        <div  class="col-0 col-md-2">
         </div>
     </div>
+
 
     <div class="row text-center topBuffer">
-        <div class="col-0 col-md-3">
-        </div>
-        <div class="col-12 col-md-6 text-center">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+        <div class="col-12 text-center" style="width:50%">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#donateModal">
                 <%= __('QUERO_AJUDAR') %>
             </button>
         </div>
-        <div class="col-0 col-md-3">
-        </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-md-12" style="padding:50px">
+
+    <% if(campaign.goods.length != 0) { %>
+    <div class="row text-center">
+        <div class="col-12 col-md-12">
             <h1 class="text-center">Outras maneiras de ajudar</h1>
         </div>
-        <div class="col-md-3">
+        <% for(var i=0; i<campaign.goods.length; i++) { %>
+        <div class="col-4 col-md-2">
+            <img src="/image/goods/<%=campaign.goods[i].type%>.png">
+            <p><%=campaign.goods[i].type %></p>
         </div>
-        <div class="col-4 col-md-2 text-center">
-            <img src="/images/clothes_icon.png" alt="t-shirt icon" style="width:100px;height:100px">
-            <p>Roupa</p>
-        </div>
-        <div class="col-4 col-md-2 text-center">
-            <img src="/images/food_icon.svg" alt="food icon" style="width:100px;height:100px">
-            <p>Comida</p>
-        </div>
-        <div class="col-4 col-md-2 text-center">
-            <img src="/images/toys_icon.png" alt="toys icon" style="width:100px;height:100px">
-            <p>Brinquedos</p>
-        </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-4 col-md-2 text-center">
-            <img src="/images/school_supplies_icon.png" alt="school supplies icon" style="width:100px;height:100px">
-            <p>Material Escolar</p>
-        </div>
-
-        <div class="col-4 col-md-2 text-center">
-            <img src="/images/cleaning_supplies_icon.png" alt="cleaning supplies icon" style="width:100px;height:100px">
-            <p>Material de Limpeza</p>
-        </div>
-        <div class="col-4 col-md-2 text-center">
-            <img src="/images/books_icon.png" alt="books icon" style="width:100px;height:100px">
-            <p>Livros</p>
-        </div>
-        <div class="col-md-3">
-        </div>
+        <% } %>
     </div>
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-12 col-md-6">
-            <h1 class=" text-center">Localização</h1>
-        </div>
-        <div class="col-md-3">
-        </div>
+    <% } %>
 
+    <div class="text-center">
+        <h1>Localização</h1>
     </div>
+
     <div class = "row">
-        <div class="col-md-3">
-        </div>
         <div class="col-12 col-md-6 text-center">
-            <h2>R. do Bonjardim 345, 4000-010 Porto</h2>
+            <h3>asdsadasdsadsadsadsadasdsa</h3>
+            <h3>asdsadasdsadsadsadsadasdsa</h3>
+            <h3>asdsadasdsads || 123131313213</h3>
+            <h3>asdsadasdsadsadsadsadasdsa</h3>
+            <hr>
+            <h3>asdsadasdsadsadsadsadasdsa</h3>
+            <h3>asdsadasdsadsadsadsadasdsa</h3>
+            <h3>asdsadasdsads || 123131313213</h3>
+            <h3>asdsadasdsadsadsadsadasdsa</h3>
         </div>
-        <div class="col-md-3">
+        <% for(var i=0; i<campaign.headquarters.length; i++) {%>
+        <div class="col-12 col-md-6 text-center">
+            <h3><%=campaign.headquarters.adress[i]%> </h3>
+            <h3><%=campaign.headquarters.zipcode[i]%> </h3>
+            <h3><%=campaign.headquarters.phoneNumber1[i]%></h3>
+            <h3><%=campaign.headquarters.phoneNumber2[i]%></h3>
+            <h3><%=campaign.headquarters.email[i]%> </h3>
         </div>
-        <div class="col-md-3">
-        </div>
+        <hr>
+        <% } %>
+
         <div class="col-12 col-md-6 text-center">
             <div id="map">
-
             </div>
-        </div>
-        <div class="col-md-3">
         </div>
     </div>
 </div>
@@ -156,10 +134,15 @@
             zoom: 18,
             center: uluru
         });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
+        for(var i=0; i<campaign.headquarters; i++){
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: campaign.headquarters.lat[i],
+                    lng: campaign.headquarters.lng[i],
+                },
+                map: map
+            });
+        }
     }
 </script>
 <script async defer
