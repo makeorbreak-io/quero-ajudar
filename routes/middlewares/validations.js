@@ -31,6 +31,3 @@ exports.category =
     body('category', 1069); //TODO ONLY CONTAIN ENUM
 exports.location =
     body('location', 10610); //TODO ONLY CONTAIN ENUM
-exports.id =
-    body('id', 10611)
-    	.exists();//TODO ONLY CONTAIN NUMBERS

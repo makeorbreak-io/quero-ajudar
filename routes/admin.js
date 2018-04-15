@@ -3,7 +3,8 @@ const express = require('express'),
 	userAdminController = require('../controllers/userAdmin'),
 	verifyAuth  = require('./middlewares/verifyAuth'),
 	validation = require('./middlewares/validations'),
-	drawDonations = require('../scripts/drawDonations');
+	drawDonations = require('../scripts/drawDonations'),
+	drawWinner= require('../scripts/drawWinner');
 
 /* POST login user. */
 router.post('/login',
@@ -25,23 +26,29 @@ router.post('/login',
 /* GET login admin. */
 router.get('/',
 	function(req, res) {
-		res.render('pages/admin/index', { title: 'Admin', userLogged: false });
+		res.render('pages/admin/index', { title: 'Admin', userLogged: false , categories: config.categories, locations: config.locations});
 	}
 );
 
 /* GET dashboard admin. */
 router.get('/dashboard',
 	function(req, res) {
-		res.render('pages/admin/dashboard/index', { title: 'Admin', userLogged: false });
+		res.render('pages/admin/dashboard/index', { title: 'Admin', userLogged: false , categories: config.categories, locations: config.locations});
 	}
 );
-
-
 
 /* GET drawDonations */
 router.post('/draw_donations',
 	function(req, res) {
 		drawDonations();
+		res.redirect('/');
+	}
+);
+
+/* GET drawWinner */
+router.post('/draw_winner',
+	function(req, res) {
+		drawWinner();
 		res.redirect('/');
 	}
 );

@@ -77,6 +77,8 @@ app.use(function(err, req, res, next) {
 	res.render('error');
 });
 
+var drawWinner = require('./scripts/drawWinner');
+drawWinner();
 /*var drawDonations = require('./scripts/drawDonations');
 var CronJob = require('cron').CronJob;
 new CronJob('00,15,30,45 * * * * *', drawDonations, null, true, 'America/Los_Angeles');*/

@@ -23,8 +23,7 @@ router.get('/:name',
 
 /* POST make donation to organization. */
 router.post('/:name/donate',
-	[ validation.amount,
-		validation.id ],
+	[ validation.amount],
 	verifyAuth.user,
 	donationController.donateOrganization,
 	function(req, res) {
