@@ -109,11 +109,11 @@
         </div>
         <% for(var i=0; i<organization.headquarters.length; i++) {%>
         <div class="col-12 col-md-6 text-center">
-            <h3><%=campaign.headquarters.adress[i]%> </h3>
-            <h3><%=campaign.headquarters.zipcode[i]%> </h3>
-            <h3><%=campaign.headquarters.phoneNumber1[i]%></h3>
-            <h3><%=campaign.headquarters.phoneNumber2[i]%></h3>
-            <h3><%=campaign.headquarters.email[i]%> </h3>
+            <h3><%=organization.headquarters.address[i]%> </h3>
+            <h3><%=organization.headquarters.zipCode[i]%> </h3>
+            <h3><%=organization.headquarters.phoneNumber1[i]%></h3>
+            <h3><%=organization.headquarters.phoneNumber2[i]%></h3>
+            <h3><%=organization.headquarters.email[i]%> </h3>
             <hr>
         </div>
         <% } %>
@@ -127,6 +127,8 @@
 
 </div>
 <% include ../../partials/footer %>
+<% include ../partials/modals/donateModal%>
+
 <script>
     function initMap() {
         var uluru = {lat: 41.1497299, lng: -8.6102169};

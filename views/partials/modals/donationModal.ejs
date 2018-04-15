@@ -11,7 +11,7 @@
                             <span><b>Quantia</b></span>
                         </div>
                         <div class="form-group text-center">
-                            <input type="number" min="1">
+                            <input type="number" name="amount" min="1" required>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
@@ -87,15 +87,32 @@
                             <div class="col-sm-6">
                                 <button type="button" class="goToCategory btn btn-primary btn-block">Antes</button>
                             </div>
-                            <% if(!userLogged){ %>
                             <div class="col-sm-6">
-                                <button type="button" class="goToAuthenticate btn btn-primary btn-block">Autenticar-se!</button>
+                                <button <%if(userLogged){ %>id="nextBtn1"<% } else {%> id="authenticateBtn1" <%}%>
+                                class="btn btn-primary btn-block" type="button">Seguinte</button>
                             </div>
-                            <% } else {%>
+                        </div>
+                    </div>
+
+                    <div id="checkDonationContainer1" style="display:none">
+                        <div class="form-group text-center">
+                            <span id="checkDonationWithValue">Certeza que quer doar para este site e merda</span>
+                        </div>
+                        <div class="form-row">
                             <div class="col-sm-6">
-                                <button type="button" class="checkDonation btn btn-primary btn-block">Seguinte</button>
+                                <button type="button" class="goToQuantity1 btn btn-primary btn-block">Back</button>
                             </div>
-                            <% } %>
+                            <div class="col-sm-6">
+                                <button type="button" class="goToPayment1 btn btn-primary btn-block">Seguinte</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="paymentContainer1" style="display:none">
+                        <div class="form-group text-center">
+                            <h2>Métodos de Pagamento</h2>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-block btn-primary">Paypalee</button>
                         </div>
                     </div>
                 </form>

@@ -9,7 +9,7 @@ const express = require('express'),
 router.get('/',
 	campaignController.list,
 	function(req, res) {
-		res.render('pages/campaigns/index', { title: 'Campaigns', campaigns:  res.locals.campaigns, userLogged : req.session.userId});
+		res.render('pages/campaigns/index', { title: 'Campaigns', campaigns:  res.locals.campaigns, userLogged : req.session.userId, categories: config.categories, locations: config.location});
 	}
 );
 
@@ -17,7 +17,7 @@ router.get('/',
 router.get('/:name',
 	campaignController.retrieve,
 	function(req, res) {
-		res.render('pages/campaigns/view', { title: 'Campaign', campaign:  res.locals.campaign, userLogged : req.session.userId});
+		res.render('pages/campaigns/view', { title: 'Campaign', campaign:  res.locals.campaign, userLogged : req.session.userId, formUrl: '/campanhas/' + req.params.name + '/donate'});
 	}
 );
 
