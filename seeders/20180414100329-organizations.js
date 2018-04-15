@@ -2,7 +2,7 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-    queryInterface.bulkInsert('Organizations', [
+    return queryInterface.bulkInsert('Organizations', [
     {
         name: 'Juntos pelos  animais',
         urlName: 'juntos-pelos-animais',
@@ -14,7 +14,7 @@ module.exports = {
         facebook:'facebook.com/juntospeloanimais',
         instagram:'instagram.com/juntospelosanimais',
         createdAt : new Date(),
-        updatedAt : new Date()
+        updatedAt : new Date(),
     },
     {
         name: 'Associação de Apoio à Vitima',
@@ -26,7 +26,7 @@ module.exports = {
         website:'www.apav.pt',
         facebook:'https://www.facebook.com/APAV.Portugal/',
         createdAt : new Date(),
-        updatedAt : new Date()
+        updatedAt : new Date(),
     },
     {
         name: 'Alcoolicos Anonimos',
@@ -37,8 +37,8 @@ module.exports = {
         category: '4',
         website: 'www.alcoolicos-anonimos.pt',
         createdAt : new Date(),
-        updatedAt : new Date()
-    }
+        updatedAt : new Date(),
+    },
 
     {
         name: 'Cáritas Portuguesas',
@@ -49,11 +49,9 @@ module.exports = {
         category: '1',
         website: 'www.caritas.pt',
         createdAt : new Date(),
-        updatedAt : new Date()
-    }
-], {});
+        updatedAt : new Date(),
+    },], {});
 },
-
 
 down: (queryInterface, Sequelize) => {
 }

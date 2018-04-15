@@ -41,6 +41,78 @@ module.exports = {
             updatedAt : new Date()
         },
         {
+            organizationId: 3,
+            path: '/images/apav/slide1.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            organizationId: 3,
+            path: '/images/apav/slide2.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            organizationId: 3,
+            path: '/images/apav/slide3.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            organizationId: 4,
+            path: '/images/apav/slide1.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            organizationId: 4,
+            path: '/images/apav/slide2.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            organizationId: 4,
+            path: '/images/apav/slide3.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            campaignId: 1,
+            path: '/images/aa/slide1.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            campaignId: 1,
+            path: '/images/aa/slide2.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            campaignId: 1,
+            path: '/images/aa/slide3.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            campaignId: 2,
+            path: '/images/aa/slide1.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            campaignId: 2,
+            path: '/images/aa/slide2.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            campaignId: 2,
+            path: '/images/aa/slide3.png',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
             campaignId: 3,
             path: '/images/aa/slide1.png',
             createdAt : new Date(),
@@ -55,24 +127,6 @@ module.exports = {
         {
             campaignId: 3,
             path: '/images/aa/slide3.png',
-            createdAt : new Date(),
-            updatedAt : new Date()
-        },
-        {
-            campaignId: 4,
-            path: '/images/caritas/slide1.png',
-            createdAt : new Date(),
-            updatedAt : new Date()
-        },
-        {
-            campaignId: 4,
-            path: '/images/caritas/slide2.png',
-            createdAt : new Date(),
-            updatedAt : new Date()
-        },
-        {
-            campaignId: 4,
-            path: '/images/caritas/slide3.png',
             createdAt : new Date(),
             updatedAt : new Date()
         }
