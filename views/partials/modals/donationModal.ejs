@@ -12,27 +12,27 @@
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal"><%= __('FECHAR') %></button>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="goToCategory btn btn-primary btn-block">Depois</button>
+                                <button type="button" class="goToCategory btn btn-primary btn-block"><%= __('SEGUINTE') %></button>
                             </div>
                         </div>
                     </div>
                     <div id="categoryContainer" style="display:none">
-                        <div class="form-group text-left">
-                            <span><b>Category</b></span>
+                        <div class="form-group text-center">
+                            <span><b><%= __('CATEGORIA') %></b></span>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-sm-12 text-center">
-                                <input type="radio" name="category"  value="null" checked>Todos<br>
+                            <div class="form-group col-sm-12 text-left">
+                                <input type="radio" name="category"  value="null" checked><%= __('TODOS') %><br>
                             </div>
-                            <div class="form-group col-sm-6 text-center">
+                            <div class="form-group col-sm-6 text-left">
                                 <% for(var i = 0; i < categories.length/2;i++){ %>
                                 <input type="radio" name="category" value="<%=categories[i]%>"><%=categories[i]%><br>
                                 <%}%>
                             </div>
-                            <div class="form-group col-sm-6 text-center">
+                            <div class="form-group col-sm-6 text-left">
                                 <% for(var i = categories.length/2; i < categories.length;i++){ %>
                                 <input type="radio" name="category" value="<%=categories[i]%>"><%=categories[i]%><br>
                                 <%}%>
@@ -40,27 +40,27 @@
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
-                                <button type="button" class="goToQuantity btn btn-primary btn-block">Antes</button>
+                                <button type="button" class="goToQuantity btn btn-primary btn-block"><%= __('ANTERIOR') %></button>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="goToLocation  btn-primary btn btn-block">Depois</button>
+                                <button type="button" class="goToLocation  btn-primary btn btn-block"><%= __('SEGUINTE') %></button>
                             </div>
                         </div>
                     </div>
                     <div id="locationContainer" style="display:none">
-                        <div class="form-group">
-                            <span><b>Localização</b></span>
+                        <div class="form-group text-center">
+                            <span><b><%= __('LOCALIZACAO') %></b></span>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-sm-12 text-center">
-                                <input type="radio" name="location"  value="null" checked>Todos<br>
+                            <div class="form-group col-sm-12 text-left">
+                                <input type="radio" name="location"  value="null" checked><%= __('TODOS') %><br>
                             </div>
-                            <div class="form-group col-sm-6 text-center">
+                            <div class="form-group col-sm-6 text-left">
                                 <% for(var i = 0; i < locations.length/2;i++){ %>
                                 <input type="radio" name="location" value="<%=locations[i]%>"><%=locations[i]%><br>
                                 <%}%>
                             </div>
-                            <div class="form-group col-sm-6 text-center">
+                            <div class="form-group col-sm-6 text-left">
                                 <% for(var i = locations.length/2; i < locations.length;i++){ %>
                                 <input type="radio" name="location" value="<%=locations[i]%>"><%=locations[i]%><br>
                                 <%}%>
@@ -68,11 +68,11 @@
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
-                                <button type="button" class="goToCategory btn btn-primary btn-block">Antes</button>
+                                <button type="button" class="goToCategory btn btn-primary btn-block"><%= __('ANTERIOR') %></button>
                             </div>
                             <div class="col-sm-6">
                                 <button <%if(userLogged){ %>id="nextBtn1"<% } else {%> id="authenticateBtn1" <%}%>
-                                class="btn btn-primary btn-block" type="button">Seguinte</button>
+                                class="btn btn-primary btn-block" type="button"><%= __('SEGUINTE') %></button>
                             </div>
                         </div>
                     </div>
@@ -80,13 +80,13 @@
                     <div id="checkDonationContainer1" style="display:none">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <div class="form-group text-center">
-                            <h3>Conclua a sua doação:</h3>
+                            <h3><%= __('CONCLUIR_DOACAO') %></h3>
                         </div>
                             <div class="form-group text-center">
-                                <h2><b>Métodos de Pagamento</b></h2>
+                                <h2><b><%= __('METODOS_PAGAMENTO') %></b></h2>
                             </div>
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-block btn-primary">Paypalee</button>
+                                <button type="submit" class="btn btn-block btn-primary">PayPal</button>
                             </div>
                     </div>
                 </form>
