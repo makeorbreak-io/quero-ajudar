@@ -37,15 +37,15 @@ module.exports = function() {
 
 			var random = Math.floor(Math.random() * total);
 			var temp = 0;
-			var winnerId;
+			var winner;
 			for(var i=0; i<users.length;i++){
 				temp += users[i]['donations.nTickets'];
 				if(random <= temp){
-					winnerId = users[i].id;
+					winner = users[i];
 					break;
 				}
 			}
-			console.log(winnerId);
+			emailController.sendWinnerEmail(winner, null);
 		})
 		.catch(err => {
 			return;

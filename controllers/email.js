@@ -80,3 +80,27 @@ exports.sendAutomaticDonationEmail = function(donation){
 		console.log('Message sent: %s', info.messageId);
 	});
 };
+
+exports.sendWinnerEmail = function(user, prize){
+	// create reusable transporter object using the default SMTP transport
+	let transporter = nodemailer.createTransport(config.mail);
+
+	// setup email data with unicode symbols
+	let mailOptions = {
+		from: '"QueroAjudar.pt" <' + config.mail.auth.user + '>', // sender address
+		to: user.email, // list of receivers
+		subject: 'Parabéns ganhou o prémio mensal!', // Subject line
+		text: 'Bem-Vindo, parabéns!!!\n' +
+        'Caro ' + user.firstName + ' ' + user.lastName,
+		html: '<h1>Bem-Vindo, parabéns!</h1><br>' +
+        'Caro ' + user.firstName + ' ' + user.lastName
+	};
+
+	// send mail with defined transport object
+	transporter.sendMail(mailOptions, (error, info) => {
+		if (error) {
+			return console.log(error);
+		}
+		console.log('Message sent: %s', info.messageId);
+	});
+};
