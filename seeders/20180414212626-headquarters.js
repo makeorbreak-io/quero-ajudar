@@ -74,6 +74,34 @@ module.exports = {
             updatedAt : new Date()
         },
         {
+            organizationId: 5,
+            name: 'Banco Alimentar Lisboa',
+            lat: 38.750551,
+            lng: -9.1355784,
+            address: 'Avenida de Ceuta, Estação de Alcântara-Terra, Armazém 1',
+            zipCode: '1300-125 Lisboa',
+            phoneNumber1: '213649655',
+            phoneNumber2:'',
+            email:'balisboa@bancoalimentar.pt',
+            location:'Lisboa',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
+            organizationId: 6,
+            name: 'Comunidade Vida e Paz Lisboa',
+            lat: 38.7106534,
+            lng: -9.1766717,
+            address: 'Rua Domingos Bomtempo, nº 7',
+            zipCode: '1700-142 Lisboa',
+            phoneNumber1: '218460165',
+            phoneNumber2:'',
+            email:'geral@alvalade.cvidaepaz.pt',
+            location:'Lisboa',
+            createdAt : new Date(),
+            updatedAt : new Date()
+        },
+        {
             campaignId: 1,
             name: 'Cáritas Diocesana Dos Açores',
             lat: 38.6680878,
