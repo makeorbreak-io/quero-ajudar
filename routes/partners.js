@@ -6,7 +6,7 @@ const express = require('express'),
 router.get('/',
 	partnerController.list,
 	function(req, res) {
-		res.render('pages/partners/index', { title: 'Partners', partners:  res.locals.partners});
+		res.render('pages/partners/index', { title: 'Partners', partners:  res.locals.partners, userLogged : req.session.userId});
 	}
 );
 
