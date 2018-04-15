@@ -2,15 +2,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content" id="loginModal">
             <div class="modal-header">
-                <h5 class="modal-title ">Login</h5>
+                <h5 class="modal-title "><%= __('Login') %></h5>
             </div>
             <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <span>Email</span>
+                            <span><%= __('EMAIL') %></span>
                         </div>
                         <div class="form-group col-md-9" >
-                            <input id="loginEmail" type="email" placeholder="Email" style="width:100%">
+                            <input id="loginEmail" type="email" placeholder="<%= __('EMAIL') %>" style="width:100%">
                         </div>
                     </div>
                     <div class="form-row">
@@ -18,42 +18,42 @@
                             <span>Password</span>
                         </div>
                         <div class="form-group col-md-9">
-                            <input id="loginPassword" type="password" placeholder="*****" style="width:100%">
+                            <input id="loginPassword" type="password" placeholder="*********" style="width:100%">
                         </div>
                     </div>
                     <button id="doLogin" class="btn btn-block btn-primary">Login</button>
                 <hr>
-                <p class="text-center"><small>Não tem conta?</small></p>
-                <button id="registerBtn" class="btn btn-block btn-primary">Registe-se agora</button>
+                <p class="text-center"><small><%= __('N_TEM_CONTA') %></small></p>
+                <button id="registerBtn" class="btn btn-block btn-primary"><%= __('REGISTAR') %></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal"><%= __('FECHAR') %></button>
             </div>
         </div>
         <div class="modal-content" id="registerModal" style="display:none">
             <div class="modal-header">
-                <h5 class="modal-title">Registe-se agora</h5>
+                <h5 class="modal-title"><%= __('REGISTAR') %></h5>
             </div>
             <div class="modal-body">
                     <div class="form-group">
-                        <input id="registerEmail" type="email" placeholder="Email" style="width:100%">
+                        <input id="registerEmail" type="email" placeholder="<%= __('EMAIL') %>" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input id="registerFirstName" type="text" placeholder="First Name" style="width:100%">
+                        <input id="registerFirstName" type="text" placeholder="<%= __('PRIMEIRO_NOME') %>" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input id="registerLastName" type="text" placeholder="Last Name" style="width:100%">
+                        <input id="registerLastName" type="text" placeholder="<%= __('LAST_NAME') %>" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input id="registerPassword" type="password" placeholder="****" style="width:100%">
+                        <input id="registerPassword" type="password" placeholder="********" style="width:100%">
                     </div>
                     <div class="form-group">
-                        <input id="registerPasswordConfirmation" type="password" placeholder="****" style="width:100%">
+                        <input id="registerPasswordConfirmation" type="password" placeholder="********" style="width:100%">
                     </div>
-                    <button id="doRegister" class="btn btn-block btn-primary">Registar agora</button>
+                    <button id="doRegister" class="btn btn-block btn-primary"><%= __('REGISTAR') %></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal"><%= __('FECHAR') %></button>
             </div>
         </div>
     </div>

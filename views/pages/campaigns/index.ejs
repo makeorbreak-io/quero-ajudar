@@ -44,13 +44,13 @@
         <% for(var i=0; i< campaigns.length; i++) { %>
         <div class="col-12 col-sm-6 col-md-4 text-center">
             <div class="card">
-                <img class="card-img-top" src="<%=campaigns[i].logo%>" alt="Card image cap">
+                <img class="card-img-top" src="<%=campaigns[i].images[0].path%>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><%=campaigns[i].name%></h5>
                     <p class="card-text"><%=campaigns[i].description%></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
+                    <a href="/campanhas/<%=campaigns[i].urlName%>" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>

@@ -22,5 +22,19 @@
 	"LOCALIZACAO2": "Localização2",
 	"LOCALIZACAO3": "Localização3",
 	"SABER_MAIS": "Saber Mais",
-	"QUERO_AJUDAR_BTN": "QUERO AJUDAR"
+	"QUERO_AJUDAR_BTN": "QUERO AJUDAR",
+	"FECHAR": "Fechar",
+	"SEGUINTE": "Seguinte",
+	"ANTERIOR": "Anterior",
+	"METODOS_PAGAMENTO": "Métodos de Pagamento",
+	"CONCLUIR_DOACAO": "Confirme a sua Doação",
+	"TODOS": "Todos",
+	"REGISTAR": "Registar",
+	"N_TEM_CONTA": "Não têm conta?",
+	"PRIMEIRO_NOME": "Primeiro Nome",
+	"EMAIL": "Email",
+	"LAST_NAME": "Último Nome",
+	"Login": "Login",
+	"QUERO_AJUDAR_2018": "Quero Ajudar 2018",
+	"CONTACTOS": "Contactos"
 }

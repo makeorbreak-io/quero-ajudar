@@ -21,7 +21,11 @@ module.exports = {
 					model: Headquarter,
 					as: 'headquarters',
 					where: whereClause2
-				}]
+				},
+                    {
+                        model: Image,
+                        as: 'images'
+                    }]
 			})
 			.then(campaigns => {
 				res.locals.campaigns = campaigns;

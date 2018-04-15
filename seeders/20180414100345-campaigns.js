@@ -3,13 +3,13 @@ module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return queryInterface.bulkInsert('Campaigns', [
 			{
-				name: 'Juntos pelos  animais',
-				urlName: 'juntos-pelos-animais',
-				description: 'Associação de apoio e resgate dos animais, defesa contra os seus maus tratos e luta pela sua dignidade e direitos.',
+				name: 'Pedrogao',
+				urlName: 'pedrogao',
+				description: 'Restaurar os danos causados pelos fogos em pedrogão e evitar novas tragédias',
 				category: '1',
-				website:'www.juntospelosanimais.com',
-				facebook:'facebook.com/juntospeloanimais',
-				instagram:'instagram.com/juntospelosanimais',
+                website:'www.pedrogao-campanha.com',
+				facebook:'facebook.com/pedrogao-campanha',
+				instagram:'instagram.com/pedrogao-campanha',
 				startingAt : new Date(),
 				endingAt : new Date(),
 				createdAt : new Date(),
