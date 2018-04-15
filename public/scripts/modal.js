@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	var goDonationAfterLogin = false;
 	var goDonateAfterLogin = false;
 	var isOrganization = false;
 	$('#registerBtn').click(function(){
@@ -38,6 +37,20 @@ $(document).ready(function(){
 				$('#authenticationModal').modal('toggle');
 				$('#headerBtn').attr('data-target', '#infoModal');
 				$('#authenticateBtn').attr('id', 'nextBtn');
+                $('#authenticateBtn1').attr('id', 'nextBtn1');
+				if(isOrganization && goDonateAfterLogin){
+					$('#donateModal').modal('toggle');
+                    $('#checkDonationContainer').css('display','block');
+                    $('#quantityContainer1').css('display','none');
+                    $('#paymentContainer1').css('display','none');
+				} else if(!isOrganization && goDonateAfterLogin){
+                    $('#donationModal').modal('toggle');
+                    $('#quantityContainer').css('display','none');
+                    $('#categoryContainer').css('display','none');
+                    $('#locationContainer').css('display','none');
+                    $('#checkDonationContainer1').css('display','block');
+                    $('#paymentContainer1').css('display','none');
+				}
 			})
 			.fail(function () {
 				alert('bad');
@@ -63,6 +76,7 @@ $(document).ready(function(){
 	});
 	$('#authenticateBtn1').click(function () {
 		goDonateAfterLogin = true;
+		isOrganization = false;
 		$('#donationModal').modal('toggle');
 		$('#authenticationModal').modal('toggle');
 	});
@@ -73,34 +87,23 @@ $(document).ready(function(){
 		$('#checkDonationContainer1').css('display','block');
 		$('#paymentContainer1').css('display','none');
 	});
-    $('.goToPayment1').click(function () {
-        $('#quantityContainer').css('display','none');
-        $('#categoryContainer').css('display','none');
-        $('#locationContainer').css('display','none');
-        $('#checkDonationContainer1').css('display','none');
-        $('#paymentContainer1').css('display','block');
-    });
 	/*
 	DONATE TO AN ORGANIZATION
 	 */
 	$('#authenticateBtn').click(function () {
-		goDonateAfterLogin = true;
+        goDonateAfterLogin = true;
+        isOrganization = true;
 		$('#donateModal').modal('toggle');
 		$('#authenticationModal').modal('toggle');
 	});
+    $('.goToQuantity1').click(function () {
+        $('#checkDonationContainer').css('display','none');
+        $('#quantityContainer1').css('display','block');
+        $('#paymentContainer1').css('display','none');
+    });
 	$('#nextBtn').click(function () {
 		$('#checkDonationContainer').css('display','block');
 		$('#quantityContainer1').css('display','none');
 		$('#paymentContainer1').css('display','none');
-	});
-	$('.goToQuantity1').click(function () {
-		$('#checkDonationContainer').css('display','none');
-		$('#quantityContainer1').css('display','block');
-		$('#paymentContainer1').css('display','none');
-	});
-	$('.goToPayment').click(function () {
-		$('#checkDonationContainer').css('display','none');
-		$('#quantityContainer1').css('display','none');
-		$('#paymentContainer').css('display','block');
 	});
 });
