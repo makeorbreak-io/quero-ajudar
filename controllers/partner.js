@@ -11,7 +11,7 @@ module.exports = {
 				next();
 			})
 			.catch(err => {
-				res.status(500).redirect('/homepage');
+				res.status(500).redirect('/');
 			});
 	}
 };

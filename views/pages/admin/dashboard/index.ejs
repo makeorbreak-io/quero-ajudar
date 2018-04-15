@@ -7,9 +7,14 @@
 <% include ../../../partials/header %>
 <div class = "container container-background text-center" style="width:50%">
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <form method="post" action="/admin/draw_donations">
                 <button type="submit" class="btn btn-block btn-primary">Draw Donations</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <form method="post" action="/admin/draw_winner">
+                <button type="submit" class="btn btn-block btn-primary">Draw Winner</button>
             </form>
         </div>
         <br>
@@ -29,7 +34,6 @@
         <div class="col-6">
             <button type="button" class="btn btn-block btn-primary">Campaign</button>
         </div>
-
     </div>
 </div>
 </div>

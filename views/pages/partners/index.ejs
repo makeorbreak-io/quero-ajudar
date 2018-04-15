@@ -6,37 +6,15 @@
 <body>
 <% include ../../partials/header %>
 <div class = "container container-background">
-    <div class="text-center">
-        <h1><%= __('PARCEIROS2') %></h1>
+    <div class="text-center topBuffer">
+        <h1><b><%= __('PARCEIROS2') %></h1></b>
     </div>
-    <div class="row text-center topBuffer">
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
+    <div class="row text-center">
+        <%for(var i=0; i<partners.length;i++){%>
+        <div class="col-12 col-sm-6 col-md-4 topBuffer">
+            <a href="<%=partners[i].website%>"><img src="<%=partners[i].logo%>" alt="Company logo" style="width:200px;height:200px"><p><%=partners[i].name%></p></a>
         </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
-        <div class="col-4 col-md-4 topBuffer">
-            <img src="./images/google_icon.png" alt="Company logo" style="width:200px;height:200px">
-        </div>
+        <%}%>
     </div>
 </div>
 <% include ../../partials/footer %>

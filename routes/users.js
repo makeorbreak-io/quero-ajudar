@@ -21,7 +21,7 @@ router.post('/donate',
 	verifyAuth.user,
 	donationController.donate,
 	function(req, res) {
-		res.render('pages/index', { title: 'User' , userLogged : req.session.userId, categories: config.categories, locations: config.location});
+		res.redirect('/');
 	}
 );
 

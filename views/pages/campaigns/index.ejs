@@ -15,42 +15,44 @@
             <i class="fas fa-filter fa-2x"></i>
         </div>
         <div class="col-6 col-md-3 text-left">
-            <span><b>Filtrar Por:</b></small></span>
+            <h3><%= __('FILTRAR_POR') %></h3>
         </div>
         <div class="col-6 col-md-4 text-right">
             <div class="dropdown show">
-                <a class="btn btn-block btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= __('CATEGORIA') %>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#"><%= __('CATEGORIA1') %></a>
-                    <a class="dropdown-item" href="#"><%= __('CATEGORIA2') %></a>
-                    <a class="dropdown-item" href="#"><%= __('CATEGORIA3') %></a>
+
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <% for(var i=0; i<categories.length; i++) { %>
+                    <a class="dropdown-item" href="/campanhas?category=<%=categories[i]%>"><%= __(categories[i]) %></a>
+                    <% } %>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-4 text-right">
             <div class="dropdown show">
-                <a class="btn btn-block btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= __('LOCALIZACAO') %>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#"><%= __('LOCALIZACAO1') %></a>
-                    <a class="dropdown-item" href="#"><%= __('LOCALIZACAO2') %></a>
-                    <a class="dropdown-item" href="#"><%= __('LOCALIZACAO3') %></a>
+
+                <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <% for(var i=0; i<locations.length; i++) { %>
+                    <a class="dropdown-item" href="/campanhas?location=<%=locations[i]%>"><%= __(locations[i]) %></a>
+                    <% } %>
                 </div>
             </div>
         </div>
         <% for(var i=0; i< campaigns.length; i++) { %>
         <div class="col-12 col-sm-6 col-md-4 text-center">
             <div class="card">
-                <img class="card-img-top" src="<%=campaigns[i].logo%>" alt="Card image cap">
+                <img class="card-img-top" src="<%=campaigns[i].images[0].path%>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><%=campaigns[i].name%></h5>
                     <p class="card-text"><%=campaigns[i].description%></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
+                    <a href="/campanhas/<%=campaigns[i].urlName%>" class="btn btn-primary"><%= __('SABER_MAIS') %></a>
                 </div>
             </div>
         </div>

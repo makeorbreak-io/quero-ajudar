@@ -1,4 +1,5 @@
 const Op = Sequelize.Op,
+    sequelize = require('../models/index').sequelize,
 	Donation = require('../models/index').Donation,
 	User = require('../models/index').User,
 	Organization = require('../models/index').Organization,
@@ -212,7 +213,7 @@ module.exports = function(){
 						//TODO insert into donationsorganizations
 						/*donationOrganizations.organizations.forEach(function (donation) {
 							console.log(donation);
-							sequelize.query("INSERT INTO `DonationsOrganizations` (`donationId`, `organizationId`, `amount`, `createdAt`, `updatedAt`) VALUES (" + donationId.donation + ", " + donation.organizationId+ ", " + donation.amount + ", " + new Date() + ", "+ new Date() + ")", { type: sequelize.QueryTypes.INSERT})
+							sequelize.query("INSERT INTO `DonationsOrganizations` (`donationId`, `organizationId`, `amount`, `createdAt`, `updatedAt`) VALUES (" + donationId + ", " + donation.id+ ", " + donation.amount + ", " + new Date() + ", "+ new Date() + ")", { type: sequelize.QueryTypes.INSERT})
 								.then(users => {
 									// We don't need spread here, since only the results will be returned for select queries
 								})

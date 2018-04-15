@@ -34,7 +34,6 @@ router.post('/register',
 	function(req, res) {
 		console.log(res.locals.user);
 		if(res.locals.user){
-
 			console.log(req.session);
 			req.session.email = res.locals.user.email;
 			req.session.userId = res.locals.user.id;
