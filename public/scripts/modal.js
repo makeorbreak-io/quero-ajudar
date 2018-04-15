@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	var goDonationAfterLogin = false;
 
 	$('#registerBtn').click(function(){
 		$('#loginModal').css('display','none');
@@ -15,34 +16,28 @@ $(document).ready(function(){
 	$('#doRegister').click(function(){
 		$.ajax({
 			type: 'POST',
-			url: '/api/users/register',
+			url: 'api/users/register',
 			data: {
 				email: $('#registerEmail').val(),
 				firstName: $('#registerFirstName').val(),
 				lastName: $('#registerLastName').val(),
 				password: $('#registerPassword').val(),
 				passwordConfirmation: $('#registerPasswordConfirmation').val()
-			},
-			dataType: 'json',
-			success: function(data){
-				alert(data);
 			}
-		});
+		})
+			.done(function(result){
+				alert('ok');
+			});
 	});
 
 	$('#doLogin').click(function(){
-		$.ajax({
-			type: 'POST',
-			url: '/api/users/login',
-			data: {
-				email: $('#loginEmail').val(),
-				password: $('#loginPassword').val()
-			},
-			dataType: 'json',
-			success: function(data){
-				alert(data);
-			}
-		});
+		$.post('/users/login', {email: 'diogoreis@gmail.com', password: 'diogoreis18'})
+			.done(function () {
+			    alert('gud');
+			})
+			.fail(function () {
+				alert('bad');
+			});
 	});
 
 	$('.goToQuantity').click(function () {
@@ -61,6 +56,11 @@ $(document).ready(function(){
 		$('#quantityContainer').css('display','none');
 		$('#categoryContainer').css('display','none');
 		$('#locationContainer').css('display','block');
+	});
+	$('.goToAuthenticate').click(function () {
+		goDonationAfterLogin = true;
+		$('#donationModal').modal('toggle');
+		$('#authenticationModal').modal('toggle');
 	});
 
 });
