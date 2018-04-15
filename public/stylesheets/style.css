@@ -105,10 +105,11 @@ footer {
 }
 
 .queroAjudarText{
-  font-family: 'Gamja Flower', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: 20px;
   font-weight: bold;
-
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .bigFont {
