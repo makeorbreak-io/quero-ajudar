@@ -17,7 +17,7 @@ router.get('/',
 router.get('/:name',
 	organizationController.retrieve,
 	function(req, res) {
-		res.render('pages/organizations/view', { title: 'Organization', organization:  res.locals.organization, userLogged : req.session.userId});
+		res.render('pages/organizations/view', { title: 'Organization', organization:  res.locals.organization, userLogged : req.session.userId, formUrl: '/associacoes/' + req.params.name + '/donate'});
 	}
 );
 

@@ -14,7 +14,8 @@ router.post('/login',
 		if(res.locals.user){
 			req.session.email = res.locals.user.email;
 			req.session.userId = res.locals.user.id;
-			res.cookie('userId', res.locals.user.id).cookie('email', res.locals.user.email).status(200).send(); /* TODO CHANGE THIS TO SERVER */
+			console.log(res.locals.user.email);
+			res.status(200).send(); /* TODO CHANGE THIS TO SERVER */
 		}else {
 			res.status(400).send();
 		}

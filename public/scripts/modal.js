@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var goDonationAfterLogin = false;
 	var goDonateAfterLogin = false;
+	var isOrganization = false;
 	$('#registerBtn').click(function(){
 		$('#loginModal').css('display','none');
 		$('#registerModal').css('display','block');
@@ -27,9 +28,11 @@ $(document).ready(function(){
 			});
 	});
 	$('#doLogin').click(function(){
-		$.post('/api/users/login', {email: 'diogoreis@gmail.com', password: 'Diogoreis18'})
+		$.post('/api/users/login', {email: 'diogoreis@gmail.com', password: 'Diogoreis18!'})
 			.done(function () {
-			    alert('gud');
+				$('#authenticationModal').modal('toggle');
+				$('#headerBtn').attr('data-target', '#infoModal');
+				$('#authenticateBtn').attr('id', 'nextBtn');
 			})
 			.fail(function () {
 				alert('bad');
@@ -53,20 +56,34 @@ $(document).ready(function(){
 		$('#categoryContainer').css('display','none');
 		$('#locationContainer').css('display','block');
 	});
-	$('.goToAuthenticate').click(function () {
-		goDonationAfterLogin = true;
+	$('#authenticateBtn1').click(function () {
+		goDonateAfterLogin = true;
 		$('#donationModal').modal('toggle');
 		$('#authenticationModal').modal('toggle');
 	});
+	$('#nextBtn1').click(function () {
+        $('#quantityContainer').css('display','none');
+        $('#categoryContainer').css('display','none');
+        $('#locationContainer').css('display','none');
+		$('#checkDonationContainer1').css('display','block');
+		$('#paymentContainer1').css('display','none');
+	});
+    $('.goToPayment1').click(function () {
+        $('#quantityContainer').css('display','none');
+        $('#categoryContainer').css('display','none');
+        $('#locationContainer').css('display','none');
+        $('#checkDonationContainer1').css('display','none');
+        $('#paymentContainer1').css('display','block');
+    });
 	/*
 	DONATE TO AN ORGANIZATION
 	 */
-	$('.goToAuthenticate1').click(function () {
+	$('#authenticateBtn').click(function () {
 		goDonateAfterLogin = true;
 		$('#donateModal').modal('toggle');
 		$('#authenticationModal').modal('toggle');
 	});
-	$('.checkDonation').click(function () {
+	$('#nextBtn').click(function () {
 		$('#checkDonationContainer').css('display','block');
 		$('#quantityContainer1').css('display','none');
 		$('#paymentContainer1').css('display','none');
@@ -79,6 +96,6 @@ $(document).ready(function(){
 	$('.goToPayment').click(function () {
 		$('#checkDonationContainer').css('display','none');
 		$('#quantityContainer1').css('display','none');
-		$('#paymentContainer1').css('display','block');
+		$('#paymentContainer').css('display','block');
 	});
 });

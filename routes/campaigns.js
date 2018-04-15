@@ -17,7 +17,7 @@ router.get('/',
 router.get('/:name',
 	campaignController.retrieve,
 	function(req, res) {
-		res.render('pages/campaigns/view', { title: 'Campaign', campaign:  res.locals.campaign, userLogged : req.session.userId});
+		res.render('pages/campaigns/view', { title: 'Campaign', campaign:  res.locals.campaign, userLogged : req.session.userId, formUrl: '/campanhas/' + req.params.name + '/donate'});
 	}
 );
 

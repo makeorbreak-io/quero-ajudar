@@ -22,6 +22,7 @@ module.exports = {
 					if(user){
 						if (bcrypt.compareSync(req.body.password, user.password)) {
 							res.locals.user = user;
+							console.log(res.locals.user);
 							next();
 						}
 						else {
