@@ -31,7 +31,7 @@ $(document).ready(function(){
 	});
 
 	$('#doLogin').click(function(){
-		$.post('/users/login', {email: 'diogoreis@gmail.com', password: 'diogoreis18'})
+		$.post('/api/users/login', {email: 'diogoreis@gmail.com', password: 'Diogoreis18'})
 			.done(function () {
 			    alert('gud');
 			})
