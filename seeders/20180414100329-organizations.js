@@ -46,7 +46,7 @@ module.exports = {
         urlName: 'caritas',
         description: '',
         rating: 80,
-        logo: '/images/caritas.jpg',
+        logo: '/images/organizations/caritas.jpg',
         category: '1',
         website: 'www.caritas.pt',
         createdAt : new Date(),
