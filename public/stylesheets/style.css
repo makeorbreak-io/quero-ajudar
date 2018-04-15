@@ -95,9 +95,6 @@ footer {
   font-size: 100px;
 }
 
-.bigFont {
-  font-size: 60px;
-}
 
 .paddingBottom {
   padding-top: 100px;
@@ -105,4 +102,66 @@ footer {
 
 .paddingTop {
   padding-top: 150px;
+}
+
+.queroAjudarText{
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.bigFont {
+  font-size: 30px;
+}
+
+.indexText {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 576px) {
+
+  .bigFont {
+    font-size: 30px;
+  }
+
+  .indexText {
+    font-size: 1.8rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  .bigFont {
+    font-size: 40px;
+  }
+
+  .indexText {
+    font-size: 1.8rem;
+  }
+}
+
+
+@media (min-width: 992px) {
+
+  .bigFont {
+    font-size: 50px;
+  }
+
+  .indexText {
+    font-size: 2.3rem;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .bigFont {
+    font-size: 60px;
+  }
+
+  .indexText {
+    font-size: 2.5rem;
+  }
 }

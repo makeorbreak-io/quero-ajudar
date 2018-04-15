@@ -11,23 +11,28 @@ $(document).ready(function(){
 		$('#registerModal').css('display','none');
 	});
 	$('#doRegister').click(function(){
-		$.ajax({
-			type: 'POST',
-			url: 'api/users/register',
-			data: {
-				email: $('#registerEmail').val(),
-				firstName: $('#registerFirstName').val(),
-				lastName: $('#registerLastName').val(),
-				password: $('#registerPassword').val(),
-				passwordConfirmation: $('#registerPasswordConfirmation').val()
-			}
+
+		$.post('/api/users/register', {
+			email: $('#registerEmail').val(),
+			firstName: $('#registerFirstName').val(),
+			lastName: $('#registerLastName').val(),
+			password: $('#registerPassword').val(),
+			passwordConfirmation: $('#registerPasswordConfirmation').val()
 		})
-			.done(function(result){
-				alert('ok');
+			.done(function () {
+				$('#authenticationModal').modal('toggle');
+				$('#headerBtn').attr('data-target', '#infoModal');
+				$('#authenticateBtn').attr('id', 'nextBtn');
+			})
+			.fail(function () {
+				alert('bad');
 			});
 	});
 	$('#doLogin').click(function(){
-		$.post('/api/users/login', {email: 'diogoreis@gmail.com', password: 'Diogoreis18!'})
+		$.post('/api/users/login', {
+			email: $('#loginEmail').val(),
+			password: $('#loginPassword').val(),
+		})
 			.done(function () {
 				$('#authenticationModal').modal('toggle');
 				$('#headerBtn').attr('data-target', '#infoModal');

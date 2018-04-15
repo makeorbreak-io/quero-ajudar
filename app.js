@@ -36,8 +36,13 @@ app.use(i18n);
 
 
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json({
+	limit: '50mb',
+	extended: true,
+	parameterLimit: 50000
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
@@ -72,8 +77,8 @@ app.use(function(err, req, res, next) {
 	res.render('error');
 });
 
-var drawDonations = require('./scripts/drawDonations');
+/*var drawDonations = require('./scripts/drawDonations');
 var CronJob = require('cron').CronJob;
-new CronJob('00,15,30,45 * * * * *', drawDonations, null, true, 'America/Los_Angeles');
+new CronJob('00,15,30,45 * * * * *', drawDonations, null, true, 'America/Los_Angeles');*/
 
 module.exports = app;

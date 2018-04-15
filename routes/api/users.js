@@ -3,7 +3,8 @@ const express = require('express'),
 	userController = require('../../controllers/user'),
 	donationController = require('../../controllers/donation'),
 	verifyAuth  = require('../middlewares/verifyAuth'),
-	validation = require('../middlewares/validations');
+	validation = require('../middlewares/validations'),
+emailController = require('../../controllers/email');
 
 /* POST login user. */
 router.post('/login',
@@ -24,19 +25,23 @@ router.post('/login',
 
 /* POST register user. */
 router.post('/register',
-	[ validation.email,
+	/*[ validation.email,
 		validation.firstName,
 		validation.lastName,
 		validation.password,
-		validation.passwordConfirmation ],
+		validation.passwordConfirmation ],*/
 	userController.register,
 	function(req, res) {
+		console.log(res.locals.user);
 		if(res.locals.user){
+
+			console.log(req.session);
 			req.session.email = res.locals.user.email;
 			req.session.userId = res.locals.user.id;
-			res.cookie('userId', res.locals.user.id).cookie('email', res.locals.user.email).status(200).send(); /* TODO CHANGE THIS TO SERVER */
+			emailController.sendRegisterEmail(res.locals.user);
+			res.cookie('userId', res.locals.user.id).cookie('email', res.locals.user.email).status(200).send();
 		} else{
-			res.status(200).send();
+			res.status(400).send();
 		}
 	}
 );
@@ -53,4 +58,6 @@ router.get('/history',
 		}
 	}
 );
+
+
 module.exports = router;

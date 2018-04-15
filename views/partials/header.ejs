@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
     <a href="/">
-        <img border="0" src="">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">queroajudar.pt</a>
+        </nav>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,7 +23,7 @@
             </li>
             <li class="nav-item" style="text-align:center;">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#donationModal">
-                    Quero Ajudar
+                    <span class="queroAjudarText"><%= __('QUERO_AJUDAR_BTN') %></span>
                 </button>
             </li>
         </ul>
