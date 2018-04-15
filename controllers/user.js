@@ -47,6 +47,7 @@ module.exports = {
 					}
 				})
 				.then(user => {
+					console.log(user);
 					if (!user) {
 						var hash = bcrypt.hashSync(req.body.password, 10);
 						User
@@ -59,6 +60,7 @@ module.exports = {
 								disabled: false
 							})
 							.then(user => {
+								console.log(user);
 								res.locals.user = user;
 								next();
 							})

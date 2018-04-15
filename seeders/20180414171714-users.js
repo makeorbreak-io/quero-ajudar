@@ -21,7 +21,7 @@ module.exports = {
 
             },
             {
-                email : 'telmobarros@gmail.com',
+                email : 'telmo.20@hotmail.com',
                 firstName : 'Telmo',
                 lastName : 'Barros',
                 password : '$2a$10$yP762wxt1AhQZjMBAtSgluwqq02lcj0L/WCEAxvVqkDM3Kv8irGmK',  // Telmobarros20!

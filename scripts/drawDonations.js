@@ -2,7 +2,8 @@ const Op = Sequelize.Op,
 	Donation = require('../models/index').Donation,
 	User = require('../models/index').User,
 	Organization = require('../models/index').Organization,
-	Headquarter = require('../models/index').Headquarter;
+	Headquarter = require('../models/index').Headquarter,
+	emailController = require('../controllers/email');
 
 function getLastWeek(){
 	var today = new Date();
@@ -149,18 +150,43 @@ module.exports = function(){
 										delta = amount;
 										amount = 0;
 									} else {
-										donation.dataValues.amount = 0;
-										delta = donation.dataValues.amount;
 										amount -= donation.dataValues.amount;
+										delta = donation.dataValues.amount;
+										donation.dataValues.amount = 0;
 									}
 									console.log(donation);
 									console.log(amount);
 									key = donation.dataValues.id;
+									console.log(key);
 									value = donationsOrganizations[key];
 									if (value) {
-										donationsOrganizations[key].push({organization: organization.dataValues.id, amount: delta});
+										console.log('ja tenho uma organizacao');
+										donationsOrganizations[key]['organizations'].push({
+											id: organization.dataValues.id,
+											name: organization.dataValues.name,
+											description: organization.dataValues.description,
+											urlName: organization.dataValues.urlName,
+											amount: delta
+										});
 									}else{
-										donationsOrganizations[key] = [{organization: organization.dataValues.id, amount: delta}];
+										console.log('nao tenho uma organizacao');
+										donationsOrganizations[key] = {
+											user: {
+												date: donation.dataValues.createdAt,
+												firstName: donation.user.dataValues.firstName,
+												lastName: donation.user.dataValues.lastName,
+												email: donation.user.dataValues.email
+											},
+											organizations : []
+										};
+										donationsOrganizations[key]['organizations'].push({
+											id: organization.dataValues.id,
+											name: organization.dataValues.name,
+											description: organization.dataValues.description,
+											urlName: organization.dataValues.urlName,
+											amount: delta
+										});
+										console.log(donationsOrganizations);
 									}
 									if(amount > 0){
 										delete donationsMap[k].donations[k2];
@@ -174,7 +200,7 @@ module.exports = function(){
 							}
 						});
 					});
-					// { donationId : [{organizationId1, amount1}] , ...}
+					// { {donationId, firstName, lastName, email} : [{organizationId1, organizationName, organizationDescription, organizationUrlName, amount1}] , ...}
 					console.log(donationsOrganizations);
 					// { organizationId : amount_to_be_donated , ...}
 					console.log(organizationsMap);
@@ -182,13 +208,15 @@ module.exports = function(){
 					Object.keys(donationsOrganizations).forEach(function (donationId) {
 						console.log(donationId);
 						var donationOrganizations = donationsOrganizations[donationId];
-						donationOrganizations.forEach(function (donation) {
+						emailController.sendAutomaticDonationEmail(donationOrganizations);
+						//TODO insert into donationsorganizations
+						/*donationOrganizations.organizations.forEach(function (donation) {
 							console.log(donation);
-							sequelize.query("INSERT INTO `DonationsOrganizations` (`donationId`, `organizationId`, `amount`, `createdAt`, `updatedAt`) VALUES (" + donationId + ", " + donation.organization+ ", " + donation.amount + ", " + new Date() + ", "+ new Date() + ")", { type: sequelize.QueryTypes.INSERT})
+							sequelize.query("INSERT INTO `DonationsOrganizations` (`donationId`, `organizationId`, `amount`, `createdAt`, `updatedAt`) VALUES (" + donationId.donation + ", " + donation.organizationId+ ", " + donation.amount + ", " + new Date() + ", "+ new Date() + ")", { type: sequelize.QueryTypes.INSERT})
 								.then(users => {
 									// We don't need spread here, since only the results will be returned for select queries
 								})
-						});
+						});*/
 					});
 				})
 				.catch(err => {

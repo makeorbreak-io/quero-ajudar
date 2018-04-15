@@ -41,12 +41,18 @@ module.exports = {
 		},
 		{
 			amount : '420',
-			category:'8',
-			location : 'Guarda',
-			userId  : '2',
+			category:'2',
+			userId  : '3',
 			createdAt : new Date(),
 			updatedAt : new Date()
-		}], {});
+		},
+			{
+				amount : '500',
+				category:'2',
+				userId  : '3',
+				createdAt : new Date(),
+				updatedAt : new Date()
+			}], {});
 	},
 
 	down: (queryInterface, Sequelize) => {

@@ -14,26 +14,26 @@ $(document).ready(function(){
 	});
 
 	$('#doRegister').click(function(){
-		$.ajax({
-			type: 'POST',
-			url: 'api/users/register',
-			data: {
-				email: $('#registerEmail').val(),
-				firstName: $('#registerFirstName').val(),
-				lastName: $('#registerLastName').val(),
-				password: $('#registerPassword').val(),
-				passwordConfirmation: $('#registerPasswordConfirmation').val()
-			}
+
+		$.post('/api/users/register', {
+			email: 'telmo.20@hotmail.com',
+			firstName: 'Telmo',
+			lastName: 'Barros',
+			password: 'C@rneiro20',
+			passwordConfirmation: 'C@rneiro20'
 		})
-			.done(function(result){
-				alert('ok');
+			.done(function () {
+				alert('gud');
+			})
+			.fail(function () {
+				alert('bad');
 			});
 	});
 
 	$('#doLogin').click(function(){
-		$.post('/api/users/login', {email: 'diogoreis@gmail.com', password: 'Diogoreis18'})
+		$.post('/api/users/login', {email: 'diogoreis@gmail.com', password: 'Diogoreis18!'})
 			.done(function () {
-			    alert('gud');
+				alert('gud');
 			})
 			.fail(function () {
 				alert('bad');
