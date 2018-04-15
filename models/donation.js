@@ -13,9 +13,9 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}, {});
 	Donation.associate = function(models) {
-		Donation.belongsTo(models.User, {as : 'The User', foreignKey: 'userId'});
-		Donation.belongsTo(models.Organization, {as : 'The Organization', foreignKey: 'organizationId'});
-		Donation.belongsTo(models.Campaign, {as : 'The Campaign', foreignKey: 'campaignId'});
+		Donation.belongsTo(models.User, {as : 'user', foreignKey: 'userId'});
+		Donation.belongsTo(models.Organization, {as : 'Organization', foreignKey: 'organizationId'});
+		Donation.belongsTo(models.Campaign, {as : 'Campaign', foreignKey: 'campaignId'});
 		Donation.belongsToMany(models.Organization, {through: 'DonationsOrganizations', as: 'donationId'});
 	};
 	return Donation;
