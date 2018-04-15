@@ -96,24 +96,13 @@
     </div>
 
     <div class = "row">
-        <div class="col-12 col-md-6 text-center">
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsads || 123131313213</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <hr>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsads || 123131313213</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-        </div>
         <% for(var i=0; i<organization.headquarters.length; i++) {%>
         <div class="col-12 col-md-6 text-center">
-            <h3><%=organization.headquarters.address[i]%> </h3>
-            <h3><%=organization.headquarters.zipCode[i]%> </h3>
-            <h3><%=organization.headquarters.phoneNumber1[i]%></h3>
-            <h3><%=organization.headquarters.phoneNumber2[i]%></h3>
-            <h3><%=organization.headquarters.email[i]%> </h3>
+            <h3><%=organization.headquarters[i].address%> </h3>
+            <h3><%=organization.headquarters[i].zipCode%> </h3>
+            <h3><%=organization.headquarters[i].phoneNumber1%></h3>
+            <h3><%=organization.headquarters[i].phoneNumber2%></h3>
+            <h3><%=organization.headquarters[i].email%> </h3>
             <hr>
         </div>
         <% } %>
@@ -127,24 +116,23 @@
 
 </div>
 <% include ../../partials/footer %>
-<% include ../partials/modals/donateModal%>
+<% include ../../partials/modals/donateModal%>
 
 <script>
     function initMap() {
-        var uluru = {lat: 41.1497299, lng: -8.6102169};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
-            center: uluru
-        });
-        for(var i=0; i<organization.headquarters; i++){
+            center: {lat: <%=organization.headquarters[0].lat%>, lng: <%=organization.headquarters[0].lng%>}
+    });
+    <%for(var i=0; i< organization.headquarters.length ; i++){ %>
             var marker = new google.maps.Marker({
                 position: {
-                    lat: organization.headquarters.lat[i],
-                    lng: organization.headquarters.lng[i],
-                },
-                map: map
-            });
-        }
+                    lat: <%=organization.headquarters[i].lat%>,
+                lng: <%=organization.headquarters[i].lng%>
+        },
+            map: map
+        });
+        <% } %>
     }
 </script>
 <script async defer

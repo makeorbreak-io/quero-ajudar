@@ -98,24 +98,13 @@
     </div>
 
     <div class = "row">
-        <div class="col-12 col-md-6 text-center">
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsads || 123131313213</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <hr>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-            <h3>asdsadasdsads || 123131313213</h3>
-            <h3>asdsadasdsadsadsadsadasdsa</h3>
-        </div>
         <% for(var i=0; i<campaign.headquarters.length; i++) {%>
         <div class="col-12 col-md-6 text-center">
-            <h3><%=campaign.headquarters.adress[i]%> </h3>
-            <h3><%=campaign.headquarters.zipcode[i]%> </h3>
-            <h3><%=campaign.headquarters.phoneNumber1[i]%></h3>
-            <h3><%=campaign.headquarters.phoneNumber2[i]%></h3>
-            <h3><%=campaign.headquarters.email[i]%> </h3>
+            <h3><%=campaign.headquarters[i].adress%> </h3>
+            <h3><%=campaign.headquarters[i].zipcode%> </h3>
+            <h3><%=campaign.headquarters[i].phoneNumber1%></h3>
+            <h3><%=campaign.headquarters[i].phoneNumber2%></h3>
+            <h3><%=campaign.headquarters[i].email%> </h3>
         </div>
         <hr>
         <% } %>
@@ -127,24 +116,23 @@
     </div>
 </div>
 <% include ../../partials/footer %>
-<% include ../partials/modals/donateModal%>
+<% include ../../partials/modals/donateModal%>
 
 <script>
     function initMap() {
-        var uluru = {lat: 41.1497299, lng: -8.6102169};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
-            center: uluru
-        });
-        for(var i=0; i<campaign.headquarters; i++){
+            center: {lat: <%=campaign.headquarters[0].lat%>, lng: <%=campaign.headquarters[0].lng%>}
+    });
+    <%for(var i=0; i< campaign.headquarters.length ; i++){ %>
             var marker = new google.maps.Marker({
                 position: {
-                    lat: campaign.headquarters.lat[i],
-                    lng: campaign.headquarters.lng[i],
-                },
-                map: map
-            });
-        }
+                    lat: <%=campaign.headquarters[i].lat%>,
+                lng: <%=campaign.headquarters[i].lng%>
+        },
+            map: map
+        });
+        <% } %>
     }
 </script>
 <script async defer
